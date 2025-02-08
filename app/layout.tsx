@@ -1,10 +1,9 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Providers } from "@/providers"
-import { GoogleTagManager } from "@next/third-parties/google"
+import Script from "next/script"
 
 import { Settings } from "@/types/settings"
-import { Footer } from "@/components/navigation/footer"
 import { Navbar } from "@/components/navigation/navbar"
 
 import "@/styles/globals.css"
@@ -54,13 +53,28 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
+    <html lang="en" suppressHydrationWarning>
+      {Settings.gtmconnected && (
+        <>
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${Settings.gtm}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${Settings.gtm}');
+            `}
+          </Script>
+        </>
+      )}
       <body className={`${inter.variable} font-regular`}>
         <Providers>
           <Navbar />
           <main className="h-auto px-5 sm:px-8">{children}</main>
-          <Footer />
         </Providers>
       </body>
     </html>
