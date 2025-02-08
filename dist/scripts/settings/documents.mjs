@@ -1,97 +1,20 @@
 export const Documents = [
     {
-        title: "Introduction",
-        href: "/introduction",
-        heading: "Getting started",
+        title: "Sync, Export & Import",
+        href: "/sync-export-import",
         items: [
             {
-                title: "Installation",
-                href: "/installation",
+                title: "Sync cards with File",
+                href: "/sync-cards",
             },
             {
-                title: "Setup",
-                href: "/setup",
+                title: "Export cards to File",
+                href: "/export-cards",
             },
             {
-                title: "Changelog",
-                href: "/changelog",
-            },
-        ],
-    },
-    {
-        spacer: true,
-    },
-    {
-        title: "Navigation",
-        href: "/navigation",
-        heading: "Documents",
-    },
-    {
-        title: "Structure",
-        href: "/structure",
-        items: [
-            {
-                title: "Deep",
-                href: "/deep",
-                items: [
-                    {
-                        title: "Deeper",
-                        href: "/deeper",
-                        items: [
-                            {
-                                title: "Even deeper",
-                                href: "/even-deeper",
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        spacer: true,
-    },
-    {
-        title: "Markdown",
-        href: "/markdown",
-        heading: "Components",
-        items: [
-            {
-                title: "Cards",
-                href: "/cards",
-            },
-            {
-                title: "Diagrams",
-                href: "/diagrams",
-            },
-            {
-                title: "Filetree",
-                href: "/filetree",
-            },
-            {
-                title: "Lists",
-                href: "/lists",
-            },
-            {
-                title: "Maths",
-                href: "/maths",
-            },
-            {
-                title: "Notes",
-                href: "/notes",
-            },
-            {
-                title: "Steps",
-                href: "/steps",
-            },
-            {
-                title: "Table",
-                href: "/table",
-            },
-            {
-                title: "Tabs",
-                href: "/tabs",
-            },
-        ],
-    },
+                title: "Import cards from File",
+                href: "/import-cards"
+            }
+        ]
+    }
 ];

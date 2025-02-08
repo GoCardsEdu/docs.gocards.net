@@ -1,0 +1,40 @@
+---
+title: Synchronize CSV and Excel Files with Your Android Flashcards App
+description: Do you create your flashcards on your phone or laptop? I prefer using a larger screen, as it's more convenient for creating and organizing cards. However, I always review my flashcards on my smartphone since it's portable and accessible anywhere.
+keywords: ["flashcards synchronization","anki flashcards synchronization","cards synchronization","anki cards synchronization","study cards synchronization","anki study cards synchronization","sync flashcards","sync flashcards excel","sync flashcards csv","sync cards","sync cards excel","sync cards csv","sync study cards","sync study cards excel","sync study cards csv","anki sync","anki sync excel","anki sync csv","anki sync flashcards","anki sync flashcards excel","anki sync flashcards csv","anki sync cards","anki sync cards excel","anki sync cards csv","anki sync study cards","anki sync study cards excel","anki sync study cards csv"]
+---
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/rthjtSAq13A?si=ipRAJYeRNYG1ermM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+## Supported files
+GoCards supports synchronization with Excel (.xlsx, .xls) and CSV (.csv) files, making it easy to manage flashcards across different formats.
+
+## What Can a Syncing Flashcard Algorithm Do?
+
+A syncing algorithm ensures that flashcards remain up to date between a file and the GoCards application.
+It determines how to add, update, or remove flashcards based on which source has the most recent changes.
+
+Unlike other flashcard applications that require users to remove and re-import decks—causing the loss of all study progress
+— **GoCards is the only app that can synchronize flashcards while preserving study progress!**
+
+The file has a modification date, and every flashcard in GoCards has a last updated date recorded when the card is modified.
+
+**If the File is Newer Than the Flashcard in GoCards:**
+1. **Adding New Cards**: Any new cards found in the file that do not exist in GoCards are added to the synced deck.
+2. **Deleting Removed Cards**: If a card has been deleted from the file, it will be removed from the GoCards deck.
+3. **Updating Existing Cards**: If a card has been modified in the file, it will be updated in the GoCards deck.
+The update occurs only if there is at least a 70% similarity in the term or definition between the file and the card in GoCards.
+4. **Preserving Card Order**: The deck will be reordered to match the newer sequence.
+5. **Preserving Study Progress**: Study progress will be retained for updated and unchanged cards.
+
+**If the Flashcard in the Synced Deck is Newer Than the File:** \
+Similar rules apply as above, but flashcards in the file are adjusted to match those in the synced deck. \
+Additionally:
+1. **Maintaining Additional Columns**: When changing the card order, any extra columns in the file not used by GoCards will be moved together with the corresponding card to the correct row.
+
+## Check Which Cards Have Been Synced in the Card List
+When you go to the "List Cards" activity, the right sidebar will indicate which cards have been modified during the last sync.
+- Orange: The card has been updated.
+- Green: The card is new.
+
+Color Intensity:
+- More intense colors indicate changes from the file.
+- Less intense colors indicate changes from the app.

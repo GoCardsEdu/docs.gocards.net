@@ -6,12 +6,12 @@ export const Navigations = [
     href: `/docs${PageRoutes[0].href}`,
   },
   {
-    title: "Home",
-    href: "https://www.rubixstudios.com.au/",
+    title: "Google Play",
+    href: "https://play.google.com/store/apps/details?id=pl.gocards",
     external: true,
   },
 ]
 
 export const GitHubLink = {
-  href: "https://github.com/rubixvi/rubix-documents",
+  href: "https://github.com/GoCardsEdu/docs.gocards.net",
 }
