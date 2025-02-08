@@ -1,97 +1,146 @@
 export const Documents = [
     {
-        title: "Introduction",
-        href: "/introduction",
-        heading: "Getting started",
+        title: "Getting Started",
+        href: "/getting-started"
+    },
+    {
+        title: "Home Screen",
+        href: "/home"
+    },
+    {
+        title: "Decks List",
+        href: "/deck-list",
         items: [
             {
-                title: "Installation",
-                href: "/installation",
+                title: "Creating a Deck",
+                href: "/create-deck"
             },
             {
-                title: "Setup",
-                href: "/setup",
+                title: "Creating a Folder",
+                href: "/create-folder"
             },
             {
-                title: "Changelog",
-                href: "/changelog",
+                title: "Moving Decks",
+                href: "/move-decks"
             },
-        ],
+            {
+                title: "Searching Decks",
+                href: "/search-decks"
+            },
+            {
+                title: "Database Backup",
+                href: "/database-backup"
+            }
+        ]
     },
     {
-        spacer: true,
-    },
-    {
-        title: "Navigation",
-        href: "/navigation",
-        heading: "Documents",
-    },
-    {
-        title: "Structure",
-        href: "/structure",
+        title: "Study Mode",
+        href: "/study",
         items: [
             {
-                title: "Deep",
-                href: "/deep",
-                items: [
-                    {
-                        title: "Deeper",
-                        href: "/deeper",
-                        items: [
-                            {
-                                title: "Even deeper",
-                                href: "/even-deeper",
-                            },
-                        ],
-                    },
-                ],
+                title: "Gestures",
+                href: "/gestures"
             },
-        ],
+            {
+                title: "Undo last action",
+                href: "/undo-last-action"
+            },
+            {
+                title: "Auto-syc with file",
+                href: "/auto-sync"
+            }
+        ]
     },
     {
-        spacer: true,
-    },
-    {
-        title: "Markdown",
-        href: "/markdown",
-        heading: "Components",
+        title: "Edit Card",
+        href: "/edit-card",
         items: [
             {
-                title: "Cards",
-                href: "/cards",
+                title: "HTML Tags",
+                href: "/html-tags",
             },
             {
-                title: "Diagrams",
-                href: "/diagrams",
+                title: "Adding cards",
+                href: "/add-card"
             },
             {
-                title: "Filetree",
-                href: "/filetree",
-            },
-            {
-                title: "Lists",
-                href: "/lists",
-            },
-            {
-                title: "Maths",
-                href: "/maths",
-            },
-            {
-                title: "Notes",
-                href: "/notes",
-            },
-            {
-                title: "Steps",
-                href: "/steps",
-            },
-            {
-                title: "Table",
-                href: "/table",
-            },
-            {
-                title: "Tabs",
-                href: "/tabs",
-            },
-        ],
+                title: "Deleting cards",
+                href: "/delete-card"
+            }
+        ]
     },
+    {
+        title: "Browse Mode",
+        href: "/browse"
+    },
+    {
+        title: "Cards List",
+        href: "/cards-list",
+        items: [
+            {
+                title: "Searching Cards",
+                href: "/search-cards"
+            },
+            {
+                title: "Deleting Cards",
+                href: "/delete-cards"
+            },
+            {
+                title: "Reordering Cards",
+                href: "/reorder-cards"
+            },
+            {
+                title: "Multi-Select",
+                href: "/multi-select"
+            },
+            {
+                title: "Edge Bars",
+                href: "/edge-bars"
+            }
+        ]
+    },
+    {
+        title: "Sync, Export & Import",
+        href: "/sync-export-import",
+        items: [
+            {
+                title: "Sync cards with File",
+                href: "/sync-cards"
+            },
+            {
+                title: "Export Cards",
+                href: "/export-cards"
+            },
+            {
+                title: "Import Cards",
+                href: "/import-cards"
+            },
+            {
+                title: "File Format",
+                href: "/file-format"
+            },
+            {
+                title: "Why Use Excel/CSV?",
+                href: "/why-use-excel-csv"
+            }
+        ]
+    },
+    {
+        title: "Settings",
+        href: "/settings",
+        items: [
+            {
+                title: "All Decks Settings",
+                href: "/all-decks"
+            },
+            {
+                title: "Deck Specific Settings",
+                href: "/deck-specific"
+            },
+            {
+                title: "App Settings",
+                href: "/app"
+            }
+        ]
+    }
 ];

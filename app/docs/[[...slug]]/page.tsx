@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation"
+import { redirect } from "next/navigation"
 
 import { getDocument } from "@/lib/markdown"
 import { Settings } from "@/lib/meta"
@@ -6,6 +7,7 @@ import { PageRoutes } from "@/lib/pageroutes"
 import { Typography } from "@/components/ui/typography"
 import { BackToTop } from "@/components/navigation/backtotop"
 import Feedback from "@/components/navigation/feedback"
+import FacebookComments from "@/components/navigation/facebook-comments"
 import PageBreadcrumb from "@/components/navigation/pagebreadcrumb"
 import Pagination from "@/components/navigation/pagination"
 import Toc from "@/components/navigation/toc"
@@ -16,6 +18,11 @@ type PageProps = {
 
 export default async function Pages({ params }: PageProps) {
   const { slug = [] } = await params
+
+ if (slug.length === 0) {
+     redirect("/docs/sync-export-import/sync-cards");
+ }
+
   const pathName = slug.join("/")
   const res = await getDocument(pathName)
 
@@ -29,11 +36,12 @@ export default async function Pages({ params }: PageProps) {
         <PageBreadcrumb paths={slug} />
         <Typography>
           <h1 className="text-3xl -mt-2">{frontmatter.title}</h1>
-          <p className="-mt-4 text-base text-muted-foreground text-[16.5px]">
+          <p className="-mt-4 text-lg text-muted-foreground text-[16.5px]">
             {frontmatter.description}
           </p>
           <div>{content}</div>
           <Pagination pathname={pathName} />
+          <FacebookComments width="100%" />
         </Typography>
       </div>
       {Settings.rightbar && (

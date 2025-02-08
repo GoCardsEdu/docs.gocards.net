@@ -4,7 +4,6 @@ import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
 import { Settings } from "@/lib/meta"
-import { Footer } from "@/components/navigation/footer"
 import { Navbar } from "@/components/navigation/navbar"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -55,6 +54,13 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
         suppressHydrationWarning
       >
+        <div id="fb-root"></div>
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v24.0&appId=1325310982973103"
+        ></script>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -63,7 +69,6 @@ export default function RootLayout({
         >
           <Navbar />
           <main className="px-5 sm:px-8 h-auto">{children}</main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

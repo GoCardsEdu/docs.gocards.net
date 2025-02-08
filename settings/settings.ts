@@ -1,10 +1,10 @@
-export const url = "https://rubix-documents.vercel.app"
+export const url = "https://docs.gocards.net"
 export const siteicon = "/icon.png"
 
 export const gtm = "GTM-XXXXXXX"
 export const gtmconnected = true
 
-export const sitename = "Documents"
+export const sitename = "GoCards"
 export const description =
   "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements."
 export const keywords = [
