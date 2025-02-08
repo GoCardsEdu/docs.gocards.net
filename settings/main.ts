@@ -1,25 +1,28 @@
-export const url = "https://rubix-documents.vercel.app"
+export const url = "http://docs.gocards.net"
 export const siteicon = "/icon.png"
 
-export const gtm = "GTM-XXXXXXX"
+export const gtm = "G-GEHTHKJ4E6"
 export const gtmconnected = true
 
-export const sitename = "Documents"
+export const sitename = "GoCards"
 export const description =
-  "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements."
+  "Complete guide for a powerful Android flashcard app with Excel/CSV sync, spaced repetition learning, and intuitive gesture controls for efficient studying."
 export const keywords = [
-  "Next.js",
-  "documentation",
-  "Rubix Studios",
-  "open source",
-  "SEO",
+  "flashcards",
+  "spaced repetition",
+  "study app",
+  "Excel sync",
+  "CSV sync",
+  "Android flashcards",
+  "Anki alternative",
+  "learning app",
 ]
 export const urlimage = "/images/og-image.png"
-export const imagealt = "Rubix Studios Documentation"
-export const twitterhandle = "@RubixStudios"
+export const imagealt = "GoCards"
+export const twitterhandle = "@GoCardsApp"
 
-export const companyname = "Rubix Studios"
-export const companylink = "https://rubixstudios.com.au"
+export const companyname = "GoCards"
+export const companylink = "http://docs.gocards.net"
 
 export const branding = true
 export const rightsidebar = true
