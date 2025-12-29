@@ -1,13 +1,349 @@
 ---
-title: Export cards to Excel/CSV
-description:
-keywords: ["flashcards synchronization","anki flashcards synchronization","cards synchronization","anki cards synchronization","study cards synchronization","anki study cards synchronization","sync flashcards","sync flashcards excel","sync flashcards csv","sync cards","sync cards excel","sync cards csv","sync study cards","sync study cards excel","sync study cards csv","anki sync","anki sync excel","anki sync csv","anki sync flashcards","anki sync flashcards excel","anki sync flashcards csv","anki sync cards","anki sync cards excel","anki sync cards csv","anki sync study cards","anki sync study cards excel","anki sync study cards csv"]
+title: Export Cards to Excel/CSV
+description: Learn how to export your GoCards flashcard decks to Excel (.xlsx) or CSV files for editing on your computer, sharing with others, or backup purposes.
+keywords: ["export flashcards","export to excel","export to csv","flashcard backup","save flashcards","anki export","flashcard file export","deck export"]
 ---
 
-In GoCards, you can export your deck in two ways:
-1. From the card list: Open the menu in the top-right corner and select "Export cards".
-2. From the deck list: Open the menu on a deck, click "More," and then select "Export cards" from the bottom menu.
+Export your flashcard decks to Excel (.xlsx) or CSV (.csv) files to edit on your computer, share with others, or create backups. This is a **Premium feature**.
 
-<center><img src="/images/docs/cards-list-menu.png" width="300" /></center>
+## Why Export Cards?
 
+### Edit on Computer
+- **Larger screen** - Easier than phone keyboard
+- **Bulk editing** - Use Excel's find-replace, formulas
+- **Faster data entry** - Create many cards quickly
+- **Organize in spreadsheet** - Sort, filter, categorize
 
+### Share Decks
+- **Send to friends** - They can import to their GoCards
+- **Share with study group** - Everyone gets same cards
+- **Publish online** - Share via cloud storage or email
+- **Content only** - No learning progress included (privacy)
+
+### Backup Content
+- **File-based backup** - In addition to database backup
+- **Human-readable** - Open in any spreadsheet app
+- **Edit offline** - Make changes without app
+
+### Set Up Sync
+- **First step to syncing** - Export creates the initial file
+- **Then sync regularly** - Bi-directional updates
+- See [Sync Cards](/docs/sync-export-import/sync-cards/) for details
+
+---
+
+## How to Export Cards
+
+### Method 1: From Cards List (Premium)
+
+1. **Open your deck** → **"List Cards"**
+2. **Tap "⋮" menu** (top-right)
+3. **Select "Export to Excel"** or **"Export to CSV"**
+4. **Choose save location** (Downloads, Google Drive, etc.)
+5. **File is saved** with format: `DeckName.xlsx` or `DeckName.csv`
+
+<!-- TODO: Add screenshot of cards list menu showing Export options -->
+<!-- <center><img src="/images/docs/cards-list-menu.png" width="300" /></center> -->
+
+---
+
+### Method 2: From Deck Menu (Premium)
+
+1. **From home screen**, **tap on a deck** to open menu
+2. **Select "More" (⋮)**
+3. **Choose "Export to Excel"** or **"Export to CSV"**
+4. **Choose save location**
+5. **File is saved**
+
+---
+
+## Export File Formats
+
+### Excel (.xlsx)
+
+**Best for:**
+- ✅ Editing with formulas and formatting
+- ✅ Rich text editing
+- ✅ Sorting and filtering
+- ✅ Opening in Microsoft Excel, Google Sheets, LibreOffice
+
+**File size:** Slightly larger than CSV
+
+---
+
+### CSV (.csv)
+
+**Best for:**
+- ✅ Universal compatibility (any text editor can open)
+- ✅ Smaller file size
+- ✅ Programmatic processing (scripts, code)
+- ✅ Importing to other apps
+
+**Limitations:**
+- No formatting (plain text only)
+- Commas in content require quotes
+- Less user-friendly for manual editing
+
+---
+
+## What Gets Exported?
+
+### Included in Export
+
+✅ **Card terms** (questions/prompts)
+✅ **Card definitions** (answers)
+✅ **Card order** (ordinal/position)
+✅ **HTML formatting** (if present in cards)
+✅ **Disabled status** (optional column)
+
+### NOT Included in Export
+
+❌ **Learning progress** (review intervals, memorization status)
+❌ **Study history** (past grading button clicks)
+❌ **Last studied date**
+❌ **Statistics** (success rate, total reviews)
+
+**Why?** Exports are for content sharing/editing, not progress transfer. Use [Database Export](/docs/home/database-backup/) to include learning progress.
+
+---
+
+## File Structure
+
+### Excel/CSV Column Layout
+
+| Column A | Column B | Column C (optional) |
+|----------|----------|---------------------|
+| Term | Definition | Disabled |
+| What is DNA? | Deoxyribonucleic acid... | FALSE |
+| Capital of France? | Paris | FALSE |
+| What is H2O? | Water | FALSE |
+
+**Column details:**
+- **Term** - Front of flashcard (question/prompt)
+- **Definition** - Back of flashcard (answer)
+- **Disabled** - TRUE/FALSE (optional, if card is disabled)
+
+**Header row:** First row contains column names ("Term", "Definition", "Disabled")
+
+---
+
+## Editing Exported Files
+
+### In Microsoft Excel
+
+1. **Open** the exported .xlsx file
+2. **Edit cells** as needed:
+   - Add new rows (new cards)
+   - Delete rows (remove cards)
+   - Modify terms/definitions
+   - Reorder rows (changes card order)
+3. **Save** the file
+4. **Sync or re-import** to GoCards
+
+---
+
+### In Google Sheets
+
+1. **Upload** .xlsx or .csv to Google Drive
+2. **Open with Google Sheets**
+3. **Edit** as needed
+4. **Download** as .xlsx or .csv
+5. **Sync or re-import** to GoCards
+
+**Tip:** Keep the file in Google Drive and use [Cloud Storage Sync](/docs/sync-export-import/cloud-storage/) for automatic updates.
+
+---
+
+### In Text Editor (CSV only)
+
+1. **Open** .csv in Notepad, VS Code, etc.
+2. **Edit** carefully (CSV format is sensitive)
+   ```csv
+   Term,Definition,Disabled
+   "What is DNA?","Deoxyribonucleic acid",FALSE
+   "Capital of France?","Paris",FALSE
+   ```
+3. **Save** with UTF-8 encoding
+4. **Sync or re-import** to GoCards
+
+**Warning:** Easy to break CSV format. Use Excel/Sheets if possible.
+
+---
+
+## After Exporting: Next Steps
+
+### Option 1: One-Time Edit & Re-Import
+
+1. Export deck
+2. Edit in Excel
+3. **Import** the edited file as a new deck or replace existing
+4. See [Import Cards](/docs/sync-export-import/import-cards/)
+
+**Use when:** Making a one-time bulk edit
+
+---
+
+### Option 2: Set Up Ongoing Sync (Premium)
+
+1. Export deck (creates initial file)
+2. Save to cloud storage (Google Drive, Dropbox)
+3. **Link file to deck** (Deck Settings → "Sync with file")
+4. **Enable auto-sync** (syncs on deck open/close)
+5. Edit file anytime, changes sync automatically
+6. See [Sync Cards](/docs/sync-export-import/sync-cards/)
+
+**Use when:** Regularly editing cards on computer
+
+---
+
+## Common Use Cases
+
+### Create Template Deck
+
+**Scenario:** Create 100 cards with structured format
+
+**Workflow:**
+1. Create empty deck in GoCards
+2. Export to Excel
+3. **Use Excel formulas** to generate cards:
+   - Column A: `="What is " & C2 & "?"`
+   - Column B: `=D2` (definition from another column)
+   - Fill down 100 rows
+4. Import back to GoCards
+5. **Result:** 100 formatted cards in seconds
+
+---
+
+### Share with Study Group
+
+**Scenario:** Everyone needs same flashcards for exam
+
+**Workflow:**
+1. Create/export your deck
+2. **Upload to shared cloud folder** (Google Drive, Dropbox)
+3. **Share link** with group
+4. They **import to their GoCards**
+5. Everyone has identical cards (but separate learning progress)
+
+---
+
+### Backup Before Major Changes
+
+**Scenario:** About to reorganize deck, want safety net
+
+**Workflow:**
+1. Export deck to Excel
+2. **Save with date** (e.g., `Biology-2025-12-29.xlsx`)
+3. Make changes in GoCards
+4. **If something goes wrong:** Import the backup file
+
+---
+
+### Migrate from Another App
+
+**Scenario:** Moving flashcards from Anki, Quizlet, etc.
+
+**Workflow:**
+1. **Export from other app** (usually to CSV/text)
+2. **Open in Excel**, format to GoCards structure (Term, Definition columns)
+3. Save as .xlsx or .csv
+4. **Import to GoCards**
+5. Start studying immediately
+
+---
+
+## Tips for Successful Exporting
+
+### Name Files Descriptively
+
+**Good:**
+- `Spanish-Verbs-Advanced-2025-12-29.xlsx`
+- `Biology-Chapter3-Cells.xlsx`
+
+**Bad:**
+- `export.xlsx` (which deck is this?)
+- `deck123.csv` (not descriptive)
+
+---
+
+### Save to Cloud Storage
+
+**Benefits:**
+- Automatic backup
+- Access from multiple devices
+- Easy sharing
+- Enable auto-sync (Premium)
+
+**Services:**
+- Google Drive
+- Dropbox
+- OneDrive
+- iCloud (limited)
+
+---
+
+### Keep Original Exports
+
+**Before major edits:**
+1. Export deck
+2. **Rename** to `DeckName-ORIGINAL.xlsx`
+3. **Duplicate** the file
+4. Edit the duplicate
+5. **If editing fails:** You still have the original
+
+---
+
+### Test With Small Deck First
+
+**Before exporting your 1000-card deck:**
+1. Create a 5-card test deck
+2. Export it
+3. Edit in Excel
+4. Re-import or sync
+5. **Verify everything works**
+6. Then do your large deck
+
+---
+
+## Troubleshooting
+
+See [Sync Troubleshooting](/docs/sync-export-import/troubleshooting/) for detailed solutions.
+
+### Export Button Grayed Out
+
+**Cause:** Premium feature not unlocked
+
+**Solution:** Upgrade to GoCards Premium
+
+---
+
+### File Won't Open in Excel
+
+**Cause:** Corrupted export or unsupported Excel version
+
+**Solution:**
+1. Try opening in Google Sheets instead
+2. Re-export the deck
+3. Update Excel to latest version
+
+---
+
+### Export Takes Too Long
+
+**Cause:** Very large deck (thousands of cards) or large images
+
+**Solution:**
+- Be patient (may take 30+ seconds)
+- Ensure good device storage
+- Minimize images in cards
+- Split into smaller decks before exporting
+
+---
+
+## Related Topics
+
+- [Import Cards](/docs/sync-export-import/import-cards/) - Import Excel/CSV files
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - Bi-directional auto-sync (Premium)
+- [File Format Guide](/docs/sync-export-import/file-format/) - Detailed file structure specs
+- [Cloud Storage Setup](/docs/sync-export-import/cloud-storage/) - Use with Google Drive/Dropbox
+- [Database Backup](/docs/home/database-backup/) - Full backup including progress

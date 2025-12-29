@@ -1,8 +1,321 @@
 ---
-title: Import cards to Excel/CSV
-description: In GoCards, you can import decks from the deck list by clicking the three-dot menu in the top-right corner.
-keywords: ["flashcards synchronization","anki flashcards synchronization","cards synchronization","anki cards synchronization","study cards synchronization","anki study cards synchronization","sync flashcards","sync flashcards excel","sync flashcards csv","sync cards","sync cards excel","sync cards csv","sync study cards","sync study cards excel","sync study cards csv","anki sync","anki sync excel","anki sync csv","anki sync flashcards","anki sync flashcards excel","anki sync flashcards csv","anki sync cards","anki sync cards excel","anki sync cards csv","anki sync study cards","anki sync study cards excel","anki sync study cards csv"]
+title: Import Cards from Excel/CSV
+description: Learn how to import flashcard decks from Excel (.xlsx) or CSV (.csv) files into GoCards to quickly create new decks or add cards to existing decks.
+keywords: ["import flashcards","import from excel","import from csv","import deck","anki import","flashcard import","csv import","excel import"]
 ---
 
-Your file should contain three columns: Term, Definition, and Disabled (optional).
-Any additional columns will be ignored.
+Import flashcard decks from Excel (.xlsx) or CSV (.csv) files to quickly create new decks, migrate from other apps, or restore backups. This is a **Premium feature**.
+
+## How to Import Cards
+
+### From Home Screen (Premium)
+
+1. **Go to home screen** (Recent Decks or All Decks tab)
+2. **Tap "⋮" menu** (top-right)
+3. **Select "Import Excel"** or **"Import CSV"**
+4. **Browse to your file** (Downloads, Google Drive, etc.)
+5. **Select the file**
+6. **New deck is created** with the filename as deck name
+
+---
+
+## File Format Requirements
+
+### Required Columns
+
+Your file must contain these columns (header row):
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| **Term** | ✅ Yes | Front of card (question/prompt) |
+| **Definition** | ✅ Yes | Back of card (answer) |
+| **Disabled** | ❌ Optional | TRUE/FALSE (whether card is disabled) |
+
+### Example File Structure
+
+```
+| Term                    | Definition                      | Disabled |
+|-------------------------|---------------------------------|----------|
+| What is DNA?            | Deoxyribonucleic acid...        | FALSE    |
+| Capital of France?      | Paris                           | FALSE    |
+| What is photosynthesis? | Process of converting light...  | FALSE    |
+```
+
+**Important:**
+- First row must be headers: "Term", "Definition", "Disabled"
+- Term and Definition columns are required
+- Disabled column is optional
+- Additional columns are ignored (but preserved during sync)
+
+See [File Format Guide](/docs/sync-export-import/file-format/) for detailed specifications.
+
+---
+
+## What Gets Imported
+
+### Included
+✅ **All card terms and definitions** from the file
+✅ **Card order** (row order becomes card order)
+✅ **HTML formatting** (if present in cells)
+✅ **Disabled status** (if Disabled column exists)
+✅ **Empty rows** are skipped
+
+### Not Included
+❌ **Learning progress** (imports create new cards with no history)
+❌ **Study statistics** (starts fresh)
+❌ **Review intervals** (cards treated as new)
+
+**Why?** Import is for content only. Use [Database Import](/docs/home/database-backup/) to include learning progress.
+
+---
+
+## Import Use Cases
+
+### Migrate from Another App
+
+**From Anki, Quizlet, etc.:**
+1. Export from other app (usually CSV format)
+2. Open in Excel to verify/adjust format
+3. Ensure columns are "Term" and "Definition"
+4. Save as .xlsx or .csv
+5. Import to GoCards
+
+---
+
+### Bulk Card Creation
+
+**Create 100 cards quickly:**
+1. Open Excel/Google Sheets
+2. Type or paste terms in Column A
+3. Type or paste definitions in Column B
+4. Add header row: "Term", "Definition"
+5. Save and import to GoCards
+6. Much faster than typing on phone!
+
+---
+
+### Restore From Backup
+
+**If you exported cards previously:**
+1. Locate your backup .xlsx/.csv file
+2. Import to GoCards
+3. New deck created with all cards
+4. ⚠️ Learning progress won't be restored (use .db backup for that)
+
+---
+
+### Share Received Decks
+
+**Study group shared a deck:**
+1. Download the shared Excel/CSV file
+2. Import to GoCards
+3. Start studying immediately
+4. Everyone has same cards (separate progress)
+
+---
+
+## Preparing Files for Import
+
+### In Excel
+
+**Step-by-step:**
+1. **Open Excel** → Create new workbook
+2. **First row:** Type headers: `Term`, `Definition`, `Disabled`
+3. **Second row onward:** Enter your cards
+4. **Format cells:** Plain text or general (avoid date formatting)
+5. **Save as:** .xlsx (Excel) or .csv (CSV)
+6. **Transfer to phone** (cloud storage, email, etc.)
+7. **Import to GoCards**
+
+---
+
+### In Google Sheets
+
+**Step-by-step:**
+1. **Create new Google Sheet**
+2. **Add headers and cards** (same as Excel)
+3. **File → Download** → Choose format:
+   - Microsoft Excel (.xlsx)
+   - Comma-separated values (.csv)
+4. **Download to phone** or save to Google Drive
+5. **Import to GoCards**
+
+---
+
+### CSV Format Details
+
+**Example CSV file:**
+```csv
+Term,Definition,Disabled
+"What is DNA?","Deoxyribonucleic acid",FALSE
+"Capital of France?","Paris",FALSE
+```
+
+**CSV Rules:**
+- Comma-separated values
+- Quotes around values with commas: `"Hello, world"`
+- UTF-8 encoding (for special characters)
+- Header row required
+
+**Tip:** Excel handles CSV formatting automatically. Manual CSV editing can be error-prone.
+
+---
+
+## After Importing
+
+### Verify Import Success
+
+1. **Open the newly created deck**
+2. **Tap "List Cards"**
+3. **Scroll through** to verify all cards imported
+4. **Check counts:** Does card count match file row count?
+
+---
+
+### Edit Imported Cards
+
+If formatting needs adjustment:
+1. Use [Edit Cards](/docs/cards-list/editing/) to fix individual cards
+2. Or [Export](/docs/sync-export-import/export-cards/), edit in Excel, re-import
+3. Or set up [Sync](/docs/sync-export-import/sync-cards/) for ongoing edits
+
+---
+
+### Organize Imported Deck
+
+1. **Rename deck** (if default name isn't good)
+2. **Move to folder** (organize with other decks)
+3. **Reorder cards** (see [Reordering](/docs/cards-list/reordering/))
+4. **Start studying!**
+
+---
+
+## Import vs. Sync
+
+| Feature | Import | Sync |
+|---------|--------|------|
+| **Creates new deck** | ✅ Yes | ❌ No |
+| **One-time operation** | ✅ Yes | ❌ No |
+| **Ongoing bi-directional updates** | ❌ No | ✅ Yes |
+| **Preserves learning progress** | ❌ No | ✅ Yes |
+| **Auto-sync option** | ❌ No | ✅ Yes |
+
+**Use Import for:** Creating new decks from files
+
+**Use Sync for:** Ongoing editing workflow (see [Sync Cards](/docs/sync-export-import/sync-cards/))
+
+---
+
+## Troubleshooting
+
+### Import Failed - "Invalid File Format"
+
+**Causes:**
+- File doesn't have "Term" and "Definition" columns
+- Header row is missing
+- File is corrupted
+
+**Solutions:**
+1. Open file in Excel to verify structure
+2. Ensure first row has headers: `Term`, `Definition`
+3. Check for special characters in headers
+4. Try re-saving as .xlsx or .csv
+
+---
+
+### Import Failed - "No Cards Found"
+
+**Causes:**
+- File is empty (only header row)
+- All rows after header are empty
+- Columns are in wrong order
+
+**Solutions:**
+1. Verify file has data rows (not just header)
+2. Check columns are named exactly "Term" and "Definition"
+3. Remove any completely empty rows
+
+---
+
+### Cards Imported But Look Wrong
+
+**Problems:**
+- Text is cut off
+- Formatting is missing
+- Special characters show as "?" or boxes
+
+**Solutions:**
+1. **HTML formatting:** Ensure HTML tags are intact in Excel
+2. **Encoding:** Save CSV with UTF-8 encoding
+3. **Special characters:** Use Excel (.xlsx) instead of CSV for better support
+
+---
+
+### Duplicate Deck Created
+
+**Problem:** Import created new deck instead of adding to existing
+
+**Explanation:** Import always creates a new deck.
+
+**Solutions:**
+- Use [Sync](/docs/sync-export-import/sync-cards/) to update existing deck
+- Or use [Multi-Select](/docs/cards-list/multi-select/) to move cards between decks
+- Or delete duplicate and re-import differently
+
+---
+
+## Tips for Successful Import
+
+### Test With Small File First
+
+**Before importing 1000 cards:**
+1. Create test file with 5 cards
+2. Import to GoCards
+3. Verify formatting, encoding, structure
+4. Then import your full file
+
+---
+
+### Use Excel Over CSV
+
+**Excel (.xlsx) advantages:**
+- Less prone to formatting errors
+- Better handles special characters
+- Easier to edit
+- More forgiving of content with commas
+
+---
+
+### Name Files Descriptively
+
+**Good filenames:**
+- `Spanish-Vocabulary-Level1.xlsx`
+- `Biology-Final-Exam.csv`
+
+**Bad filenames:**
+- `cards.xlsx` (too generic)
+- `deck1.csv` (not descriptive)
+
+**Why:** Imported deck name comes from filename
+
+---
+
+### Prepare File on Computer
+
+**Don't:**
+- Create file on phone (tiny keyboard, formatting issues)
+
+**Do:**
+- Use computer with Excel/Google Sheets
+- Leverage formulas, find-replace, bulk editing
+- Transfer finished file to phone
+
+---
+
+## Related Topics
+
+- [Export Cards](/docs/sync-export-import/export-cards/) - Export decks to Excel/CSV
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - Set up ongoing sync instead of one-time import
+- [File Format Guide](/docs/sync-export-import/file-format/) - Detailed file structure specifications
+- [Cloud Storage](/docs/sync-export-import/cloud-storage/) - Import from Google Drive/Dropbox
+- [Troubleshooting](/docs/sync-export-import/troubleshooting/) - Solve import problems

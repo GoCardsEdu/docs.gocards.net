@@ -1,0 +1,364 @@
+---
+title: Study Mode - Learning with Spaced Repetition
+description: Master your flashcards with GoCards' study mode featuring spaced repetition algorithm, four grading buttons, interactive gestures, and progress tracking.
+keywords: ["spaced repetition","flashcard study","anki study mode","learn flashcards","memorization technique","study cards","flashcard learning","spaced repetition algorithm"]
+---
+
+<!--
+IMPROVEMENT SUGGESTIONS:
+1. Add screenshot: Study screen showing term/definition layout
+2. Add screenshot: Grading buttons with interval times displayed
+3. Add screenshot: Pinch-to-zoom gesture demonstration
+4. Add screenshot: Term/definition ratio slider
+5. Add diagram: Flow chart of how spaced repetition intervals work
+-->
+
+Study Mode is where the learning happens! GoCards uses **spaced repetition** to help you memorize efficiently by showing cards at optimal intervals.
+
+## Starting a Study Session
+
+From the home screen:
+
+1. **Tap on a deck**
+2. **Select "Study Cards"**
+3. **Your first card appears**
+
+GoCards automatically selects which cards to show based on:
+- Cards you've never seen before
+- Cards due for review today
+- Cards you marked as "Again" recently
+
+---
+
+## The Study Screen Interface
+
+### Card Layout
+
+```
+┌─────────────────────────────┐
+│    [Toolbar: ↶ + ✏️ 🗑️ ⋮]   │
+├─────────────────────────────┤
+│                             │
+│        TERM (Question)      │ ← Top section (always visible)
+│                             │
+├─────────────────────────────┤ ← Drag this bar to resize
+│                             │
+│     DEFINITION (Answer)     │ ← Bottom section (tap to reveal)
+│                             │
+├─────────────────────────────┤
+│  [Again] [Quick] [Hard] [Easy] │ ← Grading buttons
+│   2 days   5 min   3 days  5 days│ ← Next review time
+└─────────────────────────────┘
+```
+
+### Navigation
+
+- **Swipe left/right** - Move between cards
+- **Tap bottom section** - Reveal the definition (answer)
+- **Tap anywhere** after reveal - Shows grading buttons
+
+---
+
+## The Four Grading Buttons
+
+After revealing the answer, grade how well you remembered:
+
+### 🔴 Again (Red)
+
+**Use when:** You forgot the card completely
+
+**What happens:**
+- Card stays in the current study session
+- Reappears after you've studied/forgotten 5 more cards
+- Next review: **2 days** (or current interval if already learned)
+- Marks card as "forgotten" (visible in card list edge bar)
+
+**Customization:** Change the "forgotten card limit" in [Deck Settings](/docs/settings/deck-settings/)
+
+---
+
+### 🟠 Quick Repetition (Orange)
+
+**Use when:** Cramming for an exam or need short-term recall
+
+**What happens:**
+- First review: **5 minutes**
+- Second review: **10 minutes**
+- Third review: **20 minutes**
+- Intervals keep doubling
+
+**Perfect for:**
+- Last-minute studying before exams
+- Memorizing information needed in the next few hours
+- Intensive drilling of difficult material
+
+---
+
+### 🔵 Hard (Blue)
+
+**Use when:** You remembered, but it took effort
+
+**What happens:**
+
+If this is your **first time** grading the card:
+- Next review: **3 days**
+- Subsequent reviews: **interval × 1.5**
+
+If you previously clicked **"Again"**:
+- Updates the failed attempt with **interval × 0.5**
+- Creates new review with **interval × 1.5**
+
+**Example progression:**
+1. First: 3 days
+2. Second: 4.5 days (3 × 1.5)
+3. Third: 6.75 days (4.5 × 1.5)
+
+---
+
+### 🟢 Easy (Green)
+
+**Use when:** You remembered quickly and confidently
+
+**What happens:**
+
+If this is your **first time** grading the card:
+- Next review: **5 days**
+- Subsequent reviews: **interval × 2**
+
+If you previously clicked **"Again"**:
+- Updates the failed attempt with **interval × 0.5**
+- Marks card as memorized
+
+**Example progression:**
+1. First: 5 days
+2. Second: 10 days (5 × 2)
+3. Third: 20 days (10 × 2)
+4. Fourth: 40 days (20 × 2)
+
+---
+
+## Interactive Gestures
+
+Study mode is highly interactive. No need to dig through settings!
+
+### Pinch to Zoom
+
+**Gesture:** Pinch out (spread fingers) or pinch in on any card section
+
+**What it does:**
+- Increases or decreases text size
+- Applies to both term and definition
+- Zoom level is saved per deck
+
+**Great for:**
+- Reading small text
+- Fitting more content on screen
+- Accessibility needs
+
+### Adjust Term/Definition Ratio
+
+**Gesture:** Drag the horizontal bar between term and definition
+
+**What it does:**
+- Makes term section larger/smaller
+- Makes definition section smaller/larger
+- Ratio is saved per deck
+
+**Useful when:**
+- Your terms are short but definitions are long (or vice versa)
+- You want to see more of one section
+- Different decks have different content lengths
+
+### Reset View
+
+**How:** Tap "⋮" menu → "Reset View"
+
+**What it does:**
+- Restores default term/definition ratio
+- Resets text zoom to default
+- Quick way to undo accidental gestures
+
+---
+
+## Card Actions During Study
+
+### Toolbar Options (Top)
+
+**↶ Undo**
+- Reverts your last grading button click
+- Also works for card deletion
+- Only undoes the most recent action
+
+**+ Add Card**
+- Creates a new card mid-study
+- Useful when you think of related content
+- Opens [Edit Card](/docs/cards-list/editing/) screen
+
+**✏️ Edit Card**
+- Modify the current card's content
+- Fix typos or add details
+- Opens [Edit Card](/docs/cards-list/editing/) screen
+
+**🗑️ Delete Card**
+- Removes the current card (with confirmation)
+- Can be undone immediately
+- Moves to next card automatically
+
+**⋮ More Menu**
+- Additional options
+- Create new card (same as + button)
+- Future features may appear here
+
+---
+
+## Understanding Review Intervals
+
+The interval shown below each button is **when you'll see this card again**.
+
+### How Intervals Work
+
+**New cards** (never studied):
+- Again: 2 days
+- Quick: 5 minutes
+- Hard: 3 days
+- Easy: 5 days
+
+**Previously studied cards:**
+- Intervals adapt based on your history
+- More "Easy" clicks = longer intervals
+- "Again" clicks = shorter intervals
+- The algorithm balances memory retention with study efficiency
+
+### Why These Intervals?
+
+GoCards uses **spaced repetition** based on memory research:
+- Review just before you're about to forget
+- Longer intervals strengthen long-term memory
+- Too frequent = waste of time
+- Too infrequent = you'll forget
+
+---
+
+## Study Session Flow
+
+### When Cards Appear
+
+1. **New cards** - Never studied before
+2. **Due cards** - Review interval has passed
+3. **Forgotten cards** - Recently marked "Again"
+
+### Session Length
+
+A study session includes:
+- All due cards (scheduled for today or earlier)
+- Up to 20 new cards (configurable)
+- "Again" cards loop back into current session
+
+You can study as long as you want. The session ends when:
+- No more cards are due
+- You've studied all new cards
+- You press the back button
+
+### "No More Cards" Screen
+
+When you've finished:
+- Congratulations message appears
+- Shows how many cards you studied
+- Option to continue browsing all cards
+- Back button returns to deck menu
+
+---
+
+## Study Progress Tracking
+
+### Edge Bars (Visible in Card List)
+
+After studying, open "List Cards" to see:
+
+**Left/Right edge bars** show card status:
+- **🔴 Red** - Forgotten (marked "Again")
+- **🟡 Yellow** - Learning (seen but not mastered)
+- **🟢 Green** - Mastered (long intervals)
+- **Color intensity** - How recently the card was studied
+
+See [Cards List - Edge Bars](/docs/cards-list/#edge-bars) for details.
+
+### Learning Statistics
+
+GoCards tracks:
+- Total cards studied
+- Cards memorized vs. forgotten
+- Study streaks
+- Time spent studying
+- Cards due today
+
+*(Statistics screen coming soon)*
+
+---
+
+## Auto-Sync Feature (Premium)
+
+If you've set up [File Sync](/docs/sync-export-import/sync-cards/):
+
+**When study session starts:**
+- Automatically syncs with your Excel/CSV file
+- Imports any changes from the file
+- Updates GoCards with latest card edits
+
+**When study session ends:**
+- Syncs progress back to file (if file format supports it)
+- Keeps everything up to date
+
+Enable in [Deck Settings](/docs/settings/deck-settings/) → "Auto-Sync"
+
+---
+
+## Tips for Effective Studying
+
+### Be Honest with Yourself
+- Don't mark "Easy" if you hesitated
+- Use "Again" freely - it helps you learn
+- The algorithm works best with accurate feedback
+
+### Consistency Over Duration
+- **Better:** 10 minutes daily
+- **Worse:** 70 minutes once a week
+- Spaced repetition requires regular reviews
+
+### Use "Quick" Strategically
+- Great for cramming before tests
+- Don't use as default - defeats spaced repetition
+- Switch to Hard/Easy for long-term learning
+
+### Don't Skip "Again" Cards
+- These are your weakest cards
+- Will reappear in current session
+- Master them before moving on
+
+### Adjust Settings
+- Increase forgotten card limit if sessions are too short
+- Decrease if you're overwhelmed
+- See [Deck Settings](/docs/settings/deck-settings/)
+
+---
+
+## Keyboard Shortcuts
+
+*(For devices with physical keyboards)*
+
+- **Space** - Reveal answer / Next card
+- **1** - Again button
+- **2** - Quick button
+- **3** - Hard button
+- **4** - Easy button
+- **Ctrl+Z** - Undo
+- **Left/Right arrows** - Navigate cards
+
+---
+
+## Related Topics
+
+- [Browse Mode](/docs/browse/) - View cards without studying
+- [Cards List](/docs/cards-list/) - See all cards and their status
+- [Deck Settings](/docs/settings/deck-settings/) - Customize study behavior
+- [Tips & Best Practices](/docs/support/tips/) - Optimize your learning

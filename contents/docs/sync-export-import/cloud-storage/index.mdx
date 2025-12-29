@@ -1,0 +1,146 @@
+---
+title: Cloud Storage Integration
+description: Learn how to use GoCards with Google Drive, Dropbox, and other cloud storage services for automatic syncing and backup.
+keywords: ["google drive sync","dropbox flashcards","cloud storage flashcards","automatic sync","cloud backup flashcards"]
+---
+
+Use cloud storage services like Google Drive or Dropbox with GoCards for automatic file syncing, cross-device access, and convenient backup.
+
+## Supported Cloud Services
+
+GoCards works with any cloud storage that provides file access on Android:
+
+- ✅ **Google Drive** - Best integration, recommended
+- ✅ **Dropbox** - Good performance
+- ✅ **OneDrive** - Works well
+- ✅ **Box** - Supported
+- ⚠️ **iCloud** - Limited on Android
+
+## Setup Workflow
+
+### 1. Install Cloud Storage App
+
+**For Google Drive:**
+- Pre-installed on most Android devices
+- Or download from Play Store
+
+**For Dropbox:**
+- Install Dropbox app from Play Store
+- Sign in to your account
+
+### 2. Export Deck to Cloud Storage
+
+1. **Open deck** → **"List Cards"** → **"⋮" menu**
+2. **Select "Export to Excel"**
+3. **Choose cloud storage location**:
+   - Tap "Save to" → Google Drive or Dropbox folder
+4. **File saves to cloud** and syncs automatically
+
+### 3. Link File to Deck (Premium)
+
+1. **Deck menu** → **"More"** → **"Sync with file"**
+2. **Browse to file** in cloud storage
+3. **Select the file**
+4. **Deck is now linked** to cloud file
+
+### 4. Enable Auto-Sync (Premium)
+
+1. **Deck menu** → **"More"** → **"Deck Settings"**
+2. **Toggle "Auto-Sync" ON**
+3. **Deck syncs automatically:**
+   - When you open the deck
+   - When you close the deck
+   - Keeps everything up to date
+
+## How It Works
+
+### On Your Computer
+
+1. **Open cloud folder** (Google Drive, Dropbox app/website)
+2. **Edit the Excel file** (add/modify/delete cards)
+3. **Save changes** - File syncs to cloud automatically
+
+### On Your Phone
+
+1. **Open deck in GoCards**
+2. **Auto-sync triggers** (if enabled)
+3. **GoCards downloads latest file** from cloud
+4. **Cards update** to match file
+5. **Study with updated content**
+
+### Two-Way Sync
+
+- **Edit in GoCards** → Changes sync to cloud file
+- **Edit in Excel** → Changes sync to GoCards
+- **Conflicts resolved** by timestamp (newest wins)
+
+## Best Practices
+
+### Use Dedicated Folder
+
+**Create "GoCards" folder** in cloud storage:
+```
+Google Drive/
+└── GoCards/
+    ├── Spanish-Vocabulary.xlsx
+    ├── Biology-Chapter1.xlsx
+    └── Math-Formulas.xlsx
+```
+
+**Benefits:**
+- Organized
+- Easy to find files
+- Can share entire folder with study group
+
+### Reliable Internet
+
+**Auto-sync requires:**
+- Active internet connection (WiFi or mobile data)
+- Cloud storage app installed and signed in
+- File permissions granted to GoCards
+
+### File Naming
+
+**Use descriptive, unique names:**
+- ✅ `Spanish-Verbs-Advanced.xlsx`
+- ❌ `deck.xlsx` (too generic)
+
+## Troubleshooting
+
+### Sync Fails - "Cannot Access File"
+
+**Causes:**
+- Cloud app not installed or signed out
+- Internet connection lost
+- File was moved/renamed/deleted
+
+**Solutions:**
+1. Open cloud storage app, verify file exists
+2. Check internet connection
+3. Re-link file in Deck Settings
+
+### Changes Not Syncing
+
+**Check:**
+- Auto-sync is enabled
+- Cloud app is running (not force-stopped)
+- File has write permissions
+- Internet is stable
+
+### Slow Sync
+
+**Causes:**
+- Large file with many images
+- Slow internet connection
+- Cloud service throttling
+
+**Solutions:**
+- Use WiFi instead of mobile data
+- Reduce image sizes in cards
+- Wait for sync to complete
+
+## Related Topics
+
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - How syncing works
+- [Export Cards](/docs/sync-export-import/export-cards/) - Create initial file
+- [Troubleshooting](/docs/sync-export-import/troubleshooting/) - Solve sync issues

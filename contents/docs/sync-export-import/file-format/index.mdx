@@ -1,0 +1,261 @@
+---
+title: File Format Specifications
+description: Detailed specifications for Excel and CSV file formats used by GoCards for import and sync operations.
+keywords: ["file format","excel format","csv format","file structure","import format"]
+---
+
+Detailed specifications for creating Excel (.xlsx) and CSV (.csv) files compatible with GoCards.
+
+## Required File Structure
+
+### Column Headers (Row 1)
+
+| Column | Required | Data Type | Description |
+|--------|----------|-----------|-------------|
+| **Term** | ✅ Required | Text | Question/prompt (front of card) |
+| **Definition** | ✅ Required | Text | Answer (back of card) |
+| **Disabled** | ❌ Optional | Boolean | TRUE/FALSE - card enabled status |
+
+**Important:**
+- Column names are case-sensitive: "Term" not "term" or "TERM"
+- Header row must be first row (row 1)
+- Order doesn't matter, but Term and Definition are typically columns A and B
+
+### Data Rows (Row 2 onward)
+
+Each row represents one flashcard:
+
+```
+Row 1: Term | Definition | Disabled
+Row 2: What is DNA? | Deoxyribonucleic acid | FALSE
+Row 3: Capital of France? | Paris | FALSE
+Row 4: Chemical formula for water? | H2O | FALSE
+```
+
+## Excel Format (.xlsx)
+
+### Cell Formatting
+
+**Text formatting:**
+- Plain text or General format (default)
+- Avoid Date formatting (may misinterpret content)
+- Long text is fine (no character limit per cell)
+
+**HTML support:**
+- HTML tags in cells render in GoCards: `<b>Bold</b>`
+- Keep HTML simple (avoid complex styling)
+
+**Line breaks:**
+- Press Alt+Enter in Excel for line breaks within cell
+- Renders as multiple lines in GoCards
+
+### Special Characters
+
+Excel .xlsx format supports:
+- ✅ Accented characters: é, ñ, ü, etc.
+- ✅ Symbols: ©, ™, °, etc.
+- ✅ Emoji: 😀, 🎓, ✅, etc.
+- ✅ Mathematical symbols: ∞, ≈, ≠, etc.
+
+No special encoding needed.
+
+### Images
+
+**Inline images not supported**. Instead:
+- Use HTML image tags: `<img src="URL">`
+- Host images online (Google Drive, Imgur, etc.)
+- Include URL in cell content
+
+**Example:**
+```
+Definition: <img src="https://example.com/diagram.png"><br>Diagram shows cell structure
+```
+
+### Multiple Sheets
+
+**GoCards reads only the first sheet (Sheet1)**
+
+- Additional sheets ignored during import/sync
+- Keep all cards on Sheet1
+- Other sheets can store notes, references (won't import)
+
+### Additional Columns
+
+**Extra columns are allowed:**
+- Columns beyond Term, Definition, Disabled are ignored by GoCards
+- Useful for: notes, tags, sources, chapter numbers
+- **Preserved during sync** - GoCards won't delete them
+- Rows stay together during sync (extra data moves with card)
+
+**Example:**
+```
+Term | Definition | Disabled | Chapter | Notes
+```
+
+GoCards uses first 3 columns, preserves last 2.
+
+## CSV Format (.csv)
+
+### Basic Structure
+
+```csv
+Term,Definition,Disabled
+"What is DNA?","Deoxyribonucleic acid",FALSE
+"Capital of France?","Paris",FALSE
+```
+
+### CSV Rules
+
+**Commas:**
+- Field separator is comma
+- Values containing commas must be quoted: `"Hello, world"`
+
+**Quotes:**
+- Use double quotes `"` to enclose values with commas
+- Escape quotes inside values: `"He said ""Hello"""`
+
+**Line breaks:**
+- Values with line breaks must be quoted
+- Line breaks preserved within quotes
+
+**Encoding:**
+- **UTF-8** encoding required for special characters
+- ANSI/ASCII may corrupt accented characters
+
+### Saving CSV Properly
+
+**From Excel:**
+1. File → Save As → CSV UTF-8 (Comma delimited) (.csv)
+2. **Not:** CSV (Comma delimited) - This uses ANSI encoding
+
+**From Google Sheets:**
+1. File → Download → Comma-separated values (.csv)
+2. Automatically uses UTF-8
+
+**From text editor:**
+1. Use UTF-8 encoding (not ANSI)
+2. Save with .csv extension
+
+### CSV Limitations
+
+Compared to Excel:
+- ❌ No cell formatting (bold, colors, etc.)
+- ❌ More prone to encoding issues
+- ❌ Easy to break with manual editing
+- ✅ Smaller file size
+- ✅ Universal compatibility
+
+**Recommendation:** Use Excel (.xlsx) unless you have specific need for CSV.
+
+## Data Validation
+
+### Valid Values
+
+**Term column:**
+- Non-empty text
+- HTML allowed
+- Special characters allowed
+- Recommended: 1-200 characters
+
+**Definition column:**
+- Non-empty text
+- HTML allowed
+- Special characters allowed
+- Can be longer than Term
+
+**Disabled column:**
+- `TRUE` or `FALSE` (case-insensitive)
+- `true`, `True`, `TRUE` all work
+- Empty cells treated as FALSE
+- Other values (1/0, Yes/No) may not work
+
+### Empty Rows
+
+- Empty rows skipped during import
+- Don't affect sync
+- Safe to leave blank rows between groups of cards
+
+### Invalid Data
+
+**What happens:**
+- Rows with empty Term or Definition are skipped
+- Warning may be shown
+- Other valid rows still import
+
+## File Size Considerations
+
+### Performance
+
+| Cards | File Size (approx) | Import Time |
+|-------|-------------------|-------------|
+| 100 | 50 KB | <1 second |
+| 1,000 | 500 KB | 2-3 seconds |
+| 10,000 | 5 MB | 10-20 seconds |
+
+**With images (embedded URLs):**
+- URL text is tiny (file size barely increases)
+- Actual images aren't in file (hosted externally)
+- Sync time depends on image download
+
+### Limits
+
+**Practical limits:**
+- **Cards per deck:** 10,000+ supported (may be slow)
+- **Text per cell:** Essentially unlimited
+- **File size:** Android system limits (usually 100+ MB fine)
+
+**Recommendations:**
+- Split very large decks (1000+ cards) for better performance
+- Keep images under 500KB each for fast loading
+- Compress images before hosting
+
+## Example Files
+
+### Minimal Valid File
+
+```
+Term,Definition
+What is DNA?,Deoxyribonucleic acid
+Capital of France?,Paris
+```
+
+### Complete Example
+
+```
+Term,Definition,Disabled
+"What is <b>DNA</b>?","Deoxyribonucleic acid - genetic material",FALSE
+"Capital of France?","<b>Paris</b><br>Population: ~2.2 million",FALSE
+"H<sub>2</sub>O formula?","Water (2 hydrogen, 1 oxygen)",FALSE
+"Difficult card","I always forget this",TRUE
+```
+
+### With Extra Columns
+
+```
+Term,Definition,Disabled,Chapter,Source
+What is DNA?,Deoxyribonucleic acid,FALSE,1,Textbook p.45
+Capital of France?,Paris,FALSE,3,Geography notes
+```
+
+## Troubleshooting Format Issues
+
+### Import Fails - Check:
+
+1. ✅ Header row has "Term" and "Definition"
+2. ✅ At least one data row exists
+3. ✅ File extension is .xlsx or .csv
+4. ✅ File isn't corrupted (opens in Excel)
+
+### Sync Issues - Check:
+
+1. ✅ File structure unchanged (same columns)
+2. ✅ File encoding is correct (UTF-8 for CSV)
+3. ✅ No locked/read-only file
+4. ✅ File hasn't been moved/renamed
+
+## Related Topics
+
+- [Import Cards](/docs/sync-export-import/import-cards/) - How to import files
+- [Export Cards](/docs/sync-export-import/export-cards/) - How to export files
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - How syncing works
+- [Troubleshooting](/docs/sync-export-import/troubleshooting/) - Solve problems

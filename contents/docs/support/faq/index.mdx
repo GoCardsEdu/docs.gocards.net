@@ -1,0 +1,215 @@
+---
+title: Frequently Asked Questions (FAQ)
+description: Answers to common questions about GoCards flashcard app features, pricing, compatibility, and usage.
+keywords: ["faq","frequently asked questions","common questions","help","answers"]
+---
+
+Answers to common questions about GoCards.
+
+## General
+
+### What is GoCards?
+
+GoCards is an Android flashcard app with spaced repetition learning and unique file synchronization features. It lets you edit flashcards on your computer (Excel/CSV) and sync them to your phone **without losing your learning progress**.
+
+### Is GoCards free?
+
+**Free version includes:**
+- ✅ Unlimited decks and cards
+- ✅ Study mode with spaced repetition
+- ✅ Basic card management
+- ✅ Database export/import
+
+**Premium features:**
+- Folders (organize decks)
+- Sync with Excel/CSV files
+- Auto-sync
+- Import/Export to Excel/CSV
+
+### How is GoCards different from Anki?
+
+- **Easier to use** - Simpler interface, less configuration
+- **File sync** - Unique ability to sync with Excel preserving progress
+- **Interactive gestures** - Pinch-to-zoom, slider adjustments
+- **Mobile-first** - Designed specifically for Android
+- **No desktop app** - Edit in Excel instead (simpler workflow)
+
+## Study & Learning
+
+### How does spaced repetition work?
+
+Cards you mark "Easy" appear after longer intervals (5 days, then 10, 20, 40, etc.). Cards marked "Hard" have shorter intervals (3 days, then 4.5, 6.75, etc.). The algorithm optimizes review timing based on memory science.
+
+See [Study Mode](/docs/study/) for details.
+
+### What if I mark "Again"?
+
+The card stays in your current study session and reappears after you've studied/forgotten 5 more cards (configurable). This ensures you practice difficult cards immediately.
+
+### Can I study without internet?
+
+Yes! GoCards works completely offline. Internet is only needed for:
+- Syncing with cloud storage files (Google Drive, Dropbox)
+- Downloading shared decks
+- Loading images from URLs in cards
+
+### How many cards should I study per day?
+
+**Beginners:** Start with 10-20 new cards per day
+**Experienced:** 20-50 new cards per day
+**Intensive:** 50+ new cards per day
+
+Quality matters more than quantity. Consistent daily practice beats occasional marathons.
+
+## Cards & Decks
+
+### Can I add images to cards?
+
+Yes! Use HTML image tags: `<img src="URL">`
+
+Host images online (Google Drive, Imgur) and include the URL in your card. See [Formatting Cards](/docs/cards-list/formatting/) for details.
+
+### Can I use formatting (bold, italic)?
+
+Yes! Use HTML tags:
+- `<b>Bold</b>` or `<strong>Strong</strong>`
+- `<i>Italic</i>` or `<em>Emphasis</em>`
+- `<u>Underline</u>`
+- Lists, line breaks, links supported
+
+See [Formatting Cards](/docs/cards-list/formatting/).
+
+### How many cards can I have?
+
+No hard limit. Decks with 10,000+ cards are supported. Performance may vary based on device and card complexity (images, HTML).
+
+### Can I share decks with friends?
+
+Yes! Two methods:
+1. **Export to Excel/CSV** (Premium) - Share content only, no progress
+2. **Export database** - Share entire deck with structure (no progress)
+
+They import into their GoCards app. See [Export Cards](/docs/sync-export-import/export-cards/).
+
+## File Sync
+
+### What is file sync? (Premium)
+
+Link your deck to an Excel/CSV file. Edit cards on your computer in Excel, save, and changes sync to GoCards automatically - **without losing your study progress**. This is GoCards' killer feature!
+
+See [Sync Cards](/docs/sync-export-import/sync-cards/).
+
+### Does sync work with Google Drive/Dropbox?
+
+Yes! Save your Excel file to cloud storage, link it to your deck, and enable auto-sync. Edit from any computer, changes sync to your phone automatically.
+
+See [Cloud Storage](/docs/sync-export-import/cloud-storage/).
+
+### Will syncing delete my progress?
+
+No! Sync preserves:
+- ✅ Review intervals
+- ✅ Memorization status
+- ✅ Study history
+- ✅ Statistics
+
+Only card **content** updates (terms, definitions). Your learning data stays intact.
+
+### What if I edit both the app and file?
+
+**Conflict resolution:** Newest change wins (based on timestamps). If you edited the file after last sync, file changes take priority. Always sync before editing in both places to avoid conflicts.
+
+## Premium Features
+
+### How do I get Premium?
+
+**In-app purchase:**
+- Open GoCards
+- Discover tab shows Premium offers
+- Follow prompts to purchase
+- One-time purchase or subscription (check current offer)
+
+### What happens if Premium expires?
+
+**You keep:**
+- All decks and cards
+- All learning progress
+- Ability to study
+
+**You lose access to:**
+- File sync (decks stay, can't sync anymore)
+- New folder creation (existing folders stay)
+- Import/Export Excel/CSV (database export still works)
+
+### Can I try Premium features?
+
+Some versions offer free trials. Check the Discover tab in the app for current promotions.
+
+## Technical
+
+### Which Android versions are supported?
+
+Typically Android 7.0+ (API level 24+). Check Play Store listing for current minimum version.
+
+### Does GoCards sync across devices?
+
+Not directly. Use these methods:
+- **Database export/import** - Manual transfer with full progress
+- **File sync (Premium)** - Content syncs, progress is per-device
+- **Cloud storage** - Content shared, each device has separate progress
+
+### Can I use GoCards on iPhone/iPad?
+
+No, GoCards is Android-only currently. iOS version is not planned.
+
+### Where is my data stored?
+
+- **Local storage:** All data is on your device
+- **No cloud sync by default:** Your data stays private
+- **Optional cloud:** Only if you use file sync with cloud storage (you control access)
+
+### Is my data private?
+
+Yes. GoCards:
+- ❌ Doesn't send your cards to servers
+- ❌ Doesn't track your study sessions
+- ❌ Doesn't require account creation
+- ✅ All data stays on your device (unless you use cloud storage)
+
+## Troubleshooting
+
+### Cards aren't syncing
+
+See [Sync Troubleshooting](/docs/sync-export-import/troubleshooting/) for detailed solutions.
+
+### Import failed
+
+Check [Import Cards - Troubleshooting](/docs/sync-export-import/import-cards/#troubleshooting).
+
+### App crashes or freezes
+
+1. **Update to latest version** (Play Store)
+2. **Restart device**
+3. **Clear app cache:** Settings → Apps → GoCards → Storage → Clear Cache
+4. **Reinstall app** (backup database first!)
+
+### Lost my decks after update
+
+Your data is preserved during updates. If decks are missing:
+1. Check "All Decks" tab (not just Recent)
+2. Restart app
+3. Check for accidental folder navigation (use back button)
+4. Restore from database backup if you have one
+
+## Still Have Questions?
+
+- **Discord Community:** Join for user-to-user help
+- **GitHub Issues:** Report bugs or request features
+- **Documentation:** Search other pages in this guide
+- **Discover Tab:** In-app support resources
+
+## Related Topics
+
+- [Tips & Best Practices](/docs/support/tips/) - Optimize your learning
+- [Getting Started](/docs/getting-started/) - Initial setup guide
+- [Sync Troubleshooting](/docs/sync-export-import/troubleshooting/) - Sync issues

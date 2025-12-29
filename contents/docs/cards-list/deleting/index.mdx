@@ -1,0 +1,304 @@
+---
+title: Deleting Cards
+description: Learn how to remove flashcards from your deck with swipe-to-delete, undo functionality, and bulk deletion options.
+keywords: ["delete flashcards","remove cards","swipe delete","undo delete","bulk delete","anki delete cards"]
+---
+
+Remove unwanted, duplicate, or outdated flashcards from your deck. GoCards offers multiple deletion methods with undo support.
+
+## How to Delete Cards
+
+### Method 1: Swipe to Delete
+
+**From Cards List:**
+
+1. **Swipe a card left or right**
+2. **Card disappears** with animation
+3. **"Undo" prompt appears** briefly
+4. **Tap "Undo"** to restore (if you acted quickly)
+
+**Fastest method** for single card deletion.
+
+---
+
+### Method 2: Card Menu
+
+**From Cards List:**
+
+1. **Tap a card** to open menu
+2. **Select "Delete Card"**
+3. **Confirm deletion** (if prompted)
+4. **Card is removed**
+
+---
+
+### Method 3: During Edit
+
+**While editing a card:**
+
+1. **Tap 🗑️ delete icon** (top-right)
+2. **Confirm deletion**
+3. **Returns to previous screen**
+
+---
+
+### Method 4: During Study/Browse
+
+**While studying:**
+
+1. **Tap 🗑️ delete icon** in toolbar
+2. **Confirm deletion**
+3. **Next card appears automatically**
+4. **Can undo** using ↶ undo button
+
+---
+
+## Undo Deletion
+
+### Immediate Undo (Swipe Method)
+
+**After swiping:**
+- **"Undo" prompt** appears for ~3 seconds
+- **Tap "Undo"** quickly
+- **Card restores** to original position
+
+**If you miss the prompt:** Card is permanently deleted (no recovery)
+
+### Undo in Study Mode
+
+**After deleting during study:**
+1. **Tap ↶ undo button** (top-left)
+2. **Card restores** immediately
+3. **Study continues** from restored card
+
+**Works for:** The most recent deletion only
+
+---
+
+## What Happens When You Delete
+
+### Immediate Effects
+
+- ✅ Card removed from deck
+- ✅ Card number/ordinal removed
+- ✅ Subsequent cards renumber (e.g., card 11 becomes card 10)
+- ✅ Card won't appear in study mode anymore
+- ✅ Card won't appear in browse mode
+- ✅ Card won't appear in cards list
+
+### Learning Progress
+
+- ❌ **Study history lost** - All grading button clicks gone
+- ❌ **Review schedule deleted** - Won't appear in future study sessions
+- ❌ **Statistics affected** - Total card count decreases
+
+**Deletion is permanent** (unless you undo immediately or restore from backup)
+
+---
+
+## Bulk Deletion
+
+### Delete Multiple Cards
+
+**Use Multi-Select:**
+
+1. **Tap a card** → **"Select Card"**
+2. **Tap additional cards** to select them
+3. **Tap "Delete" action** (in selection menu)
+4. **Confirm bulk deletion**
+5. **All selected cards removed**
+
+See [Multi-Select Operations](/docs/cards-list/multi-select/) for details.
+
+---
+
+## Common Deletion Scenarios
+
+### Remove Duplicate Cards
+
+**Problem:** Accidentally imported same cards twice
+
+**Solution:**
+1. **Use search** to find duplicates (search for common terms)
+2. **Swipe to delete** extra copies
+3. **Keep the best version** (most complete, best formatted)
+
+---
+
+### Clean Up After Import
+
+**Problem:** Imported deck has irrelevant cards
+
+**Solution:**
+1. **Browse or list all cards**
+2. **Swipe away** cards you don't need
+3. **Or use search** to find all cards on unwanted topics, then bulk delete
+
+---
+
+### Remove Mastered Cards
+
+**Problem:** You've truly mastered some cards forever
+
+**Consideration:** Keep them! They reinforce knowledge.
+
+**If you insist on deleting:**
+1. Filter/search for cards with long intervals (well-learned)
+2. Delete individually or use multi-select
+3. **Warning:** You'll lose the satisfaction of seeing "10,000 cards mastered"
+
+**Better alternative:** Just let them sit. They'll review every few months automatically.
+
+---
+
+### Delete Empty/Test Cards
+
+**Problem:** Created test cards or placeholders
+
+**Solution:**
+1. **Search for empty content** (search for "test" or "placeholder")
+2. **Swipe to delete** each one
+3. **Or multi-select** and bulk delete
+
+---
+
+## Deletion vs. Alternatives
+
+### Should You Delete?
+
+**Delete if:**
+- ✅ Card is completely wrong
+- ✅ Card is a duplicate
+- ✅ Card is irrelevant to your goals
+- ✅ Card is outdated (date-based info changed)
+
+**Don't delete if:**
+- ❌ Card is just difficult (study more instead)
+- ❌ Card has minor typos (edit instead - see [Editing](/docs/cards-list/editing/))
+- ❌ Card is temporarily irrelevant (consider disabling if available)
+- ❌ You might need it later (keep it, low cost)
+
+### Alternatives to Deletion
+
+| Goal | Instead of Deleting | Method |
+|------|---------------------|--------|
+| Fix wrong info | Edit the card | [Editing Guide](/docs/cards-list/editing/) |
+| Skip card temporarily | Disable card (if available) | Deck settings |
+| Remove from current deck | Move to another deck | Multi-select → Cut → Paste |
+| Archive old cards | Create "Archive" folder/deck | Move cards there |
+
+---
+
+## Recovering Deleted Cards
+
+### Option 1: Undo Immediately
+
+- **Within 3 seconds** of swipe deletion
+- **Tap "Undo"** prompt
+- **Or use ↶ undo button** in study mode
+
+### Option 2: Restore from Backup
+
+If you have a [database backup](/docs/home/database-backup/):
+
+1. **Find your most recent backup** (.db file)
+2. **Import the database** (⚠️ this replaces your entire current database)
+3. **Deleted cards are restored**
+4. **Warning:** You'll lose any changes made since the backup
+
+**Lesson:** Regular backups are essential!
+
+### Option 3: Restore from Synced File (Premium)
+
+If using [File Sync](/docs/sync-export-import/sync-cards/):
+
+1. **Open your Excel/CSV file**
+2. **Deleted card still there** (if you deleted in app after last sync)
+3. **Sync file to GoCards**
+4. **Card restores automatically**
+
+**Only works if:** You deleted in GoCards but the card still exists in the file.
+
+### Option 4: Re-import
+
+If you imported the card originally:
+
+1. **Find the original source** (Excel file, another deck, etc.)
+2. **Re-import the card** or manually recreate it
+3. **⚠️ Learning progress lost** - It's a "new" card again
+
+---
+
+## Tips for Safe Deletion
+
+### Be Careful with Swipe
+
+**Swipe-to-delete is fast** - maybe too fast!
+
+- **Slow down** when scrolling near cards you want to keep
+- **Horizontal swipes** delete, **vertical scrolls** navigate
+- **Watch for undo prompt** after every swipe deletion
+
+### Confirm Before Bulk Delete
+
+When deleting multiple cards:
+- **Double-check selection** - Make sure you selected the right cards
+- **Read confirmation dialog** carefully
+- **No undo for bulk operations** (usually)
+
+### Backup Before Major Cleanup
+
+Before deleting many cards:
+
+1. **Export database** as backup
+2. **Perform deletions**
+3. **If you messed up:** Restore from backup
+
+### Use Search to Verify
+
+Before deleting based on search:
+
+1. **Search for cards** (e.g., "Chapter 1")
+2. **Review ALL results** - Make sure they're all deletion candidates
+3. **Select and delete**
+
+---
+
+## Deletion and File Sync
+
+### Deleting in GoCards
+
+**If auto-sync enabled:**
+- Deleted cards removed from Excel file on next sync
+- Corresponding rows deleted
+- **Sync preserves other columns** in Excel (if any)
+
+**If manual sync:**
+- Deleted cards remain in Excel until you sync
+- Next sync removes them from file
+
+### Deleting in Excel
+
+**If you delete a row in Excel:**
+- Next sync removes that card from GoCards
+- Card disappears from deck
+- **Learning progress lost**
+
+### Conflict Resolution
+
+**Scenario:** Card deleted in GoCards, but updated in Excel (both happened since last sync)
+
+**Result:** Depends on timestamp:
+- If Excel file is newer → Card restored to GoCards
+- If GoCards is newer → Card removed from Excel
+
+See [Sync Cards - Conflict Resolution](/docs/sync-export-import/sync-cards/#conflict-resolution) for details.
+
+---
+
+## Related Topics
+
+- [Multi-Select Operations](/docs/cards-list/multi-select/) - Bulk deletion
+- [Editing Cards](/docs/cards-list/editing/) - Fix cards instead of deleting
+- [Database Backup](/docs/home/database-backup/) - Protect against accidental deletion
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - How deletion affects synced files

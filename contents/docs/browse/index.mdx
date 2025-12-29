@@ -1,0 +1,300 @@
+---
+title: Browse Mode - View Cards Without Studying
+description: Use Browse Mode to review all your flashcards in a carousel view without grading or affecting your learning progress.
+keywords: ["browse flashcards","view cards","flashcard preview","review without studying","anki browse","card carousel","flashcard overview"]
+---
+
+<!--
+IMPROVEMENT SUGGESTIONS:
+1. Add screenshot: Browse mode interface (no grading buttons)
+2. Add screenshot: Comparison view (Study mode vs Browse mode side-by-side)
+3. Note: Verify if Browse is Premium feature (conflicting info in codebase analysis)
+-->
+
+Browse Mode lets you view all your cards in a carousel format **without grading or affecting your study progress**. It's perfect for quick reviews, previewing content, or sharing cards with others.
+
+## What is Browse Mode?
+
+Browse Mode is a **view-only** version of Study Mode:
+
+| Feature | Study Mode | Browse Mode |
+|---------|-----------|-------------|
+| **View term & definition** | ✅ Yes | ✅ Yes |
+| **Swipe between cards** | ✅ Yes | ✅ Yes |
+| **Grading buttons** | ✅ Yes | ❌ No |
+| **Affects study progress** | ✅ Yes | ❌ No |
+| **Edit/delete cards** | ✅ Yes | ❌ No |
+| **Shows all cards** | ❌ Only due cards | ✅ All cards |
+| **Interactive gestures** | ✅ Yes | ✅ Yes (zoom, resize) |
+
+---
+
+## When to Use Browse Mode
+
+### Perfect for:
+
+**📋 Quick Review**
+- Skim through all cards before an exam
+- Refresh your memory without changing study schedule
+- Preview deck content before committing to study
+
+**👀 Preview New Decks**
+- Check out a deck's contents before studying
+- See what's in an imported deck
+- Verify cards after syncing with a file
+
+**🤝 Sharing with Others**
+- Show cards to a study partner
+- Demo the deck to someone
+- Collaborate on deck content
+
+**🔍 Finding Specific Cards**
+- Quickly navigate to a card you need
+- Check if certain content exists
+- Locate cards to edit later
+
+**📊 Content Audit**
+- Review all cards systematically
+- Check for errors or duplicates
+- Verify formatting and images
+
+### Not recommended for:
+
+- ❌ Active learning (use [Study Mode](/docs/study/) instead)
+- ❌ Editing cards (use [Edit Cards](/docs/cards-list/editing/) or [Cards List](/docs/cards-list/))
+- ❌ Memorization practice (use Study Mode for spaced repetition)
+
+---
+
+## Starting Browse Mode
+
+From the home screen:
+
+1. **Tap on a deck** to open deck menu
+2. **Select "Browse Cards"**
+3. **All cards appear** in carousel view
+
+From cards list:
+
+1. **Open "List Cards"**
+2. **Tap "⋮" menu** (top-right)
+3. **Select "Browse Cards"**
+
+---
+
+## The Browse Screen Interface
+
+### Card Layout
+
+```
+┌─────────────────────────────┐
+│      [← Back button]        │
+├─────────────────────────────┤
+│                             │
+│        TERM (Question)      │ ← Top section
+│                             │
+├─────────────────────────────┤ ← Drag to resize
+│                             │
+│     DEFINITION (Answer)     │ ← Bottom section
+│                             │
+│        (always visible)     │
+└─────────────────────────────┘
+```
+
+### Key Differences from Study Mode
+
+**No grading buttons** - Just view and swipe
+**No card actions** - Can't edit, delete, or add cards
+**Definition always revealed** - No need to tap to show answer
+**Shows all cards** - Not filtered by due date
+**Minimal toolbar** - Just a back button
+
+---
+
+## Navigation
+
+### Swiping Between Cards
+
+- **Swipe left** - Next card
+- **Swipe right** - Previous card
+- **Smooth animations** - Easy on the eyes
+- **Loop to beginning** - Swiping past the last card goes back to first
+
+### Card Counter
+
+*(If enabled)*
+- Shows current position (e.g., "Card 5 of 42")
+- Helps track progress through deck
+- Located at top of screen
+
+### Exiting Browse Mode
+
+- **Tap back arrow** (top-left)
+- **Device back button**
+- Returns to previous screen (deck menu or cards list)
+
+---
+
+## Interactive Features
+
+Even though you can't grade cards, Browse Mode still supports:
+
+### Pinch to Zoom
+
+**Gesture:** Pinch out/in on any card section
+
+**Use case:**
+- Read small text
+- Examine image details
+- Adjust for readability
+
+Zoom level persists across cards in the session.
+
+### Adjust Term/Definition Ratio
+
+**Gesture:** Drag the horizontal bar between sections
+
+**Use case:**
+- Optimize screen space
+- Show more of longer content
+- Match your reading preference
+
+Ratio persists across cards in the session.
+
+### HTML Content Support
+
+Browse Mode fully renders:
+- **Bold/italic text** (`<b>`, `<i>`, `<strong>`, `<em>`)
+- **Images** (`<img>` tags)
+- **Links** (clickable)
+- **Lists** (`<ul>`, `<ol>`)
+
+See [Cards List - Formatting](/docs/cards-list/formatting/) for HTML details.
+
+---
+
+## Use Cases in Detail
+
+### 1. Pre-Exam Quick Review
+
+**Scenario:** Your exam starts in 30 minutes. You want to skim all cards one last time without messing up your spaced repetition schedule.
+
+**How:**
+1. Open deck → "Browse Cards"
+2. Swipe through all cards quickly
+3. Jog your memory without clicking grading buttons
+4. Exit and head to your exam confident
+
+**Why Browse Mode?** Study Mode would mark cards as "due" and change review intervals.
+
+---
+
+### 2. Verify Sync Changes
+
+**Scenario:** You edited cards in Excel and synced. You want to make sure all changes imported correctly.
+
+**How:**
+1. After sync completes, tap deck → "Browse Cards"
+2. Swipe through cards looking for your edits
+3. Verify content, formatting, images
+4. Exit satisfied (or go to [Edit Cards](/docs/cards-list/editing/) if fixes needed)
+
+**Why Browse Mode?** Faster than opening each card in cards list. No accidental study progress.
+
+---
+
+### 3. Find a Specific Card
+
+**Scenario:** You remember a card with a specific term but forgot which position it's in.
+
+**How:**
+1. Open deck → "Browse Cards"
+2. Swipe through quickly
+3. Find the card
+4. Exit and open [Cards List](/docs/cards-list/) if you need to edit it
+
+**Alternative:** Use search in [Cards List](/docs/cards-list/#searching-cards) for text-based searches.
+
+---
+
+### 4. Teach Someone Else
+
+**Scenario:** You're tutoring a friend and want to show them your flashcard deck.
+
+**How:**
+1. Open deck → "Browse Cards"
+2. Hand them your phone
+3. They swipe through and read
+4. No risk of accidentally grading cards or changing your progress
+
+**Why Browse Mode?** Safe for others to use. Your study data stays intact.
+
+---
+
+## Limitations
+
+Browse Mode is intentionally limited to keep it simple:
+
+**Can't do:**
+- ❌ Edit card content (use [Edit Cards](/docs/cards-list/editing/))
+- ❌ Delete cards (use [Cards List](/docs/cards-list/))
+- ❌ Add new cards (use [Cards List](/docs/cards-list/) or [Study Mode](/docs/study/))
+- ❌ Change card order (use [Cards List](/docs/cards-list/reordering/))
+- ❌ Filter by learning status (shows all cards)
+- ❌ Search for cards (use [Cards List](/docs/cards-list/#searching-cards))
+- ❌ Undo actions (no actions to undo)
+
+**Can do:**
+- ✅ View all cards in order
+- ✅ Swipe between cards
+- ✅ Zoom and resize sections
+- ✅ View HTML content
+- ✅ Read at your own pace
+
+---
+
+## Comparison: Browse vs. Study vs. List
+
+| Task | Browse Mode | Study Mode | Cards List |
+|------|-------------|-----------|-----------|
+| Quick preview all cards | ✅ Best | ❌ Only due cards | ⚠️ Grid view |
+| Active learning | ❌ No | ✅ Best | ❌ No |
+| Edit cards | ❌ No | ⚠️ One at a time | ✅ Best |
+| Search cards | ❌ No | ❌ No | ✅ Best |
+| Reorder cards | ❌ No | ❌ No | ✅ Best |
+| Safe for others | ✅ Yes | ❌ Affects progress | ⚠️ Could delete |
+| Swipe navigation | ✅ Yes | ✅ Yes | ❌ Scroll/tap |
+| Grading buttons | ❌ No | ✅ Yes | ❌ No |
+
+---
+
+## Tips
+
+### Use for Initial Review
+- Browse all cards in a new deck before your first study session
+- Helps gauge difficulty and time needed
+- Mentally prepare for what's coming
+
+### Check Before Sharing
+- Always browse your deck before sharing the database file
+- Catch typos, incomplete cards, or sensitive information
+- Make a good impression on recipients
+
+### Combine with Cards List
+- Browse Mode for quick visual scanning
+- Cards List for finding, editing, organizing
+- Each has its strengths
+
+### Don't Overthink It
+- Browse Mode is simple by design
+- Just view and swipe
+- No pressure, no tracking, no consequences
+
+---
+
+## Related Topics
+
+- [Study Mode](/docs/study/) - Learn with spaced repetition
+- [Cards List](/docs/cards-list/) - Manage and organize cards
+- [Edit Cards](/docs/cards-list/editing/) - Modify card content
+- [Deck Settings](/docs/settings/deck-settings/) - Configure deck behavior

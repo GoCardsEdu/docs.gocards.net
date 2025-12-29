@@ -1,0 +1,191 @@
+---
+title: Sync Troubleshooting
+description: Solve common problems with GoCards file synchronization, import, and export features.
+keywords: ["sync problems","import errors","export failed","troubleshoot flashcards","sync not working"]
+---
+
+Solutions to common sync, import, and export problems in GoCards.
+
+## Sync Issues
+
+### Cards Not Updating
+
+**Problem:** Edited file but cards unchanged in GoCards
+
+**Solutions:**
+1. **Manual sync:** Deck menu → "Sync with file"
+2. **Check auto-sync:** Deck Settings → Verify "Auto-Sync" is ON
+3. **Verify file:** Open file, confirm edits are saved
+4. **Re-link file:** Deck Settings → Unlink → Re-link file
+5. **Check timestamps:** File modification date should be recent
+
+### Sync Shows "Conflict"
+
+**Problem:** Both app and file edited since last sync
+
+**How GoCards handles it:**
+- Compares modification timestamps
+- **Newest change wins**
+- Older change is overwritten
+
+**Prevention:**
+- Sync before editing in both places
+- Use only one editing location at a time
+- Check last sync time before editing
+
+### Sync Deletes Cards
+
+**Problem:** Cards disappeared after sync
+
+**Causes:**
+- Cards deleted from Excel file
+- Rows removed accidentally
+- File replaced with old version
+
+**Recovery:**
+1. **Check Excel file** - Are cards still there?
+2. **Restore from backup** - Use previous export/database backup
+3. **Disable auto-sync** temporarily while investigating
+
+### Sync Too Slow
+
+**Problem:** Sync takes minutes to complete
+
+**Causes:**
+- Large images embedded in cards
+- Many cards (1000+)
+- Slow internet connection
+- Cloud storage throttling
+
+**Solutions:**
+- Compress images before adding to cards
+- Split large decks into smaller ones
+- Use WiFi instead of mobile data
+- Wait during first sync (subsequent syncs are faster)
+
+## Import Issues
+
+### "Invalid File Format"
+
+**Solutions:**
+1. **Check header row:** Must have "Term" and "Definition"
+2. **Verify file extension:** .xlsx or .csv
+3. **Open in Excel:** Ensure file isn't corrupted
+4. **Re-save file:** Save as → Excel Workbook (.xlsx)
+
+### "No Cards Found"
+
+**Solutions:**
+1. **Check for data:** File must have rows beyond header
+2. **Remove empty rows:** Delete blank rows between cards
+3. **Verify column names:** Exactly "Term" and "Definition" (case-sensitive)
+
+### Cards Import With Weird Characters
+
+**Problem:** Special characters show as "?" or "□"
+
+**Solutions:**
+1. **Use Excel format:** .xlsx handles encoding better than .csv
+2. **CSV encoding:** Save as UTF-8 (not ANSI)
+3. **Check source:** Copy-paste may introduce encoding issues
+
+### HTML Tags Show As Text
+
+**Problem:** See `<b>text</b>` instead of **text**
+
+**Explanation:** This is normal in Excel. HTML renders correctly in GoCards study mode.
+
+**Verification:**
+1. Import the file
+2. Study a card
+3. HTML should render properly
+
+## Export Issues
+
+### Export Button Grayed Out
+
+**Cause:** Premium feature not unlocked
+
+**Solution:** Upgrade to GoCards Premium
+
+### Export Fails or Crashes
+
+**Solutions:**
+1. **Free up storage:** Ensure 100+ MB available
+2. **Reduce deck size:** Export smaller decks
+3. **Remove large images:** Temporarily delete image-heavy cards
+4. **Restart app:** Force close and reopen GoCards
+
+### Can't Find Exported File
+
+**Solutions:**
+1. **Check Downloads folder**
+2. **Check selected save location** (you chose where to save)
+3. **Use file manager app** to search for filename
+4. **Check cloud storage** if you saved there
+
+## File Format Issues
+
+### Excel Says "File Corrupted"
+
+**Solutions:**
+1. **Re-export from GoCards**
+2. **Try CSV format** instead
+3. **Update Excel** to latest version
+4. **Open in Google Sheets** (more forgiving)
+
+### Commas Break CSV File
+
+**Problem:** Definitions with commas cause formatting issues
+
+**Solutions:**
+1. **Use Excel format** (.xlsx) - No comma problems
+2. **CSV with quotes:** Ensure values with commas are quoted: `"Hello, world"`
+3. **Edit in Excel:** It handles CSV formatting automatically
+
+## Permission Issues
+
+### "Cannot Access File"
+
+**Solutions:**
+1. **Grant storage permission:** Settings → Apps → GoCards → Permissions → Storage
+2. **Cloud storage permission:** Install cloud app (Drive/Dropbox)
+3. **File location:** Ensure file is in accessible location
+
+### "File is Read-Only"
+
+**Solutions:**
+1. **Check file properties:** Remove read-only attribute
+2. **Cloud storage:** Verify you have edit permission
+3. **File in use:** Close Excel/other apps using the file
+
+## Data Loss Prevention
+
+### Always Backup Before:
+
+- Major sync operations
+- Bulk deletions
+- Restructuring decks
+- Experimenting with new features
+
+### Backup Methods:
+
+1. **Database export:** Full backup with progress
+2. **Excel export:** Content-only backup
+3. **Cloud storage:** Automatic file versioning
+
+## When To Contact Support
+
+If you've tried everything and still have issues:
+
+1. **Note details:** What you tried, error messages, steps to reproduce
+2. **Screenshot errors:** Helps support diagnose
+3. **Check app version:** Update to latest GoCards
+4. **Visit Discord:** Link in app menu → Community support
+
+## Related Topics
+
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - How sync works
+- [Import Cards](/docs/sync-export-import/import-cards/) - Import guide
+- [Export Cards](/docs/sync-export-import/export-cards/) - Export guide
+- [File Format](/docs/sync-export-import/file-format/) - File structure details

@@ -1,0 +1,166 @@
+---
+title: App Settings
+description: Configure global GoCards app settings including dark mode, edge bars, and default deck preferences.
+keywords: ["app settings","dark mode","edge bars","global settings","preferences"]
+---
+
+App Settings control global preferences that apply across all decks and the entire app.
+
+## How to Access
+
+**Home screen** → **"⋮" menu** (top-right) → **"App Settings"**
+
+Opens Settings screen with 3 tabs. This page covers tabs 2 and 3.
+
+## Tab 2: All Decks (Defaults)
+
+Settings that apply to **all decks by default**. Individual decks can override these in their deck settings.
+
+### Limit Forgotten Cards
+
+**What it does:** Default forgotten card limit for all new decks.
+
+**Default:** 5 cards
+
+**How it works:**
+- When creating a new deck, it inherits this value
+- Existing decks keep their current settings
+- Individual decks can override this
+
+See [Deck Settings](/docs/settings/deck-settings/) for details on this setting.
+
+---
+
+### Max Lines
+
+**What it does:** Default card display lines for all decks in list view.
+
+**Default:** 3 lines
+
+**Options:** 1-10 lines
+
+**Effect:**
+- Applies to all decks that don't have custom max lines set
+- See [Deck Settings](/docs/settings/deck-settings/) for details
+
+---
+
+### Show Left Edge Bar
+
+**What it does:** Displays status indicator on left side of cards in list view.
+
+**Default:** ON
+
+**Edge bar shows:**
+- 🔴 Red - Forgotten cards
+- 🟡 Yellow - Learning in progress
+- 🟢 Green - Well-memorized
+- 🟠 Orange - Updated via sync
+- 🟢 Bright green - Added via sync
+
+**When to disable:**
+- Prefer clean, minimalist interface
+- Don't need visual status indicators
+- Screen space is limited
+
+---
+
+### Show Right Edge Bar
+
+**What it does:** Displays status indicator on right side of cards in list view.
+
+**Default:** OFF
+
+**Options:**
+- ON - Shows edge bar on right
+- OFF - No right edge bar
+
+**When to enable:**
+- Want redundant status indicators (same info as left bar)
+- Prefer status on right side
+- Left-handed users may find it more natural
+
+**Note:** Most users only need one edge bar (left or right, not both).
+
+---
+
+## Tab 3: App (Global Settings)
+
+Settings that affect the entire app, not specific to decks.
+
+### Dark Mode
+
+**What it does:** Changes app color scheme.
+
+**Options:**
+- **Auto** (Default) - Follows Android system dark mode setting
+- **Light** - Always light theme
+- **Dark** - Always dark theme
+
+**Benefits of dark mode:**
+- Easier on eyes in low light
+- Saves battery (on OLED screens)
+- Reduces glare
+
+**When to use:**
+- **Auto:** Let Android handle it (switches based on time/ambient light)
+- **Light:** Always prefer light theme regardless of time
+- **Dark:** Always prefer dark theme
+
+**Effect:**
+- Changes background colors throughout app
+- Text colors adjust automatically
+- Applies immediately
+
+---
+
+## Tips
+
+### Minimize Visual Clutter
+
+**For clean interface:**
+1. Disable right edge bar (keep left only)
+2. Lower max lines (2-3)
+3. Use dark mode (less harsh)
+
+### Maximize Information
+
+**To see more at once:**
+1. Enable both edge bars (redundant but visible)
+2. Increase max lines (5-7)
+3. Light mode (higher contrast)
+
+### Battery Saving
+
+**Optimize for battery life:**
+1. Dark mode ON (especially on OLED screens)
+2. Disable auto-sync (sync manually)
+3. Lower max lines (less rendering)
+
+### New User Defaults
+
+**Recommended starting settings:**
+- Dark Mode: Auto
+- Show left edge bar: ON
+- Show right edge bar: OFF
+- Limit forgotten cards: 5
+- Max lines: 3
+
+Study with these for a week, then customize based on preference.
+
+### After Changing Settings
+
+**Take effect immediately:**
+- Dark mode
+- Edge bar visibility
+
+**Take effect next time:**
+- Max lines (next time you open list view)
+- Forgotten card limits (next study session)
+
+## Related Topics
+
+- [Deck Settings](/docs/settings/deck-settings/) - Per-deck configuration
+- [Settings Overview](/docs/settings/) - Understanding settings hierarchy
+- [Cards List](/docs/cards-list/) - See edge bars in action
+- [Study Mode](/docs/study/) - How forgotten card limit affects study

@@ -1,0 +1,115 @@
+---
+title: Deck Settings
+description: Configure per-deck settings including auto-sync, forgotten card limits, and display options in GoCards.
+keywords: ["deck settings","auto-sync","forgotten cards limit","deck configuration"]
+---
+
+Deck Settings let you configure options for a specific deck without affecting other decks.
+
+## How to Access
+
+1. **Tap on a deck** → **"More"** → **"Deck Settings"**
+2. Or **"List Cards"** → **"⋮" menu** → **"Deck Settings"** (gear icon)
+
+Opens Settings screen on **"This Deck" tab**.
+
+## Available Settings
+
+### Auto-Sync (Premium)
+
+**What it does:** Automatically syncs deck with linked Excel/CSV file when opening or closing the deck.
+
+**Options:**
+- ON - Auto-sync enabled
+- OFF - Manual sync only
+
+**When to use:**
+- ON: Regularly editing cards in Excel on computer
+- OFF: Deck is stable, no external edits
+
+**Prerequisites:**
+- Premium subscription
+- Deck linked to a file (More → "Sync with file")
+
+See [Sync Cards](/docs/sync-export-import/sync-cards/) for details.
+
+---
+
+### Limit Forgotten Cards
+
+**What it does:** Controls how many "Again" cards can stack up during a study session.
+
+**Default:** 5 cards
+
+**How it works:**
+- When you mark a card "Again", it stays in current session
+- After forgetting 5 cards (or your limit), additional "Again" cards wait until next session
+- Prevents endless loops of difficult cards
+
+**Recommended values:**
+- **3-5:** Short, focused sessions (10-15 min)
+- **10:** Medium sessions (20-30 min)
+- **20+:** Long, intensive sessions
+- **Unlimited (999):** Review all cards regardless
+
+**When to adjust:**
+- **Increase:** If sessions end too quickly
+- **Decrease:** If overwhelmed by difficult cards
+
+---
+
+### Max Lines (Card List Display)
+
+**What it does:** Limits how many lines of text show per card in the list view.
+
+**Default:** 3 lines
+
+**Options:** 1-10 lines
+
+**Effect:**
+- **Low (1-2):** Compact list, see more cards on screen
+- **Medium (3-4):** Balanced view
+- **High (5-10):** See more content per card, less scrolling
+
+**When to adjust:**
+- **Decrease:** Deck has many short cards, want to see more at once
+- **Increase:** Long definitions, want to read more without tapping
+
+**Note:** Study mode always shows full text (this only affects list view).
+
+---
+
+## Settings Inheritance
+
+Deck settings override "All Decks" defaults:
+
+**Example:**
+- **All Decks:** Limit forgotten cards = 10
+- **This Deck:** Limit forgotten cards = 5
+- **Result:** This deck uses 5 (deck setting wins)
+
+**Leave blank/default:** Deck inherits from "All Decks" settings.
+
+## Tips
+
+### Start with Defaults
+- Don't over-customize initially
+- Study a few sessions first
+- Adjust based on experience
+
+### Per-Deck Customization
+- **Easy deck:** Higher forgotten card limit (study more)
+- **Hard deck:** Lower limit (prevent frustration)
+- **Synced deck:** Auto-sync ON
+- **Static deck:** Auto-sync OFF (save battery/data)
+
+### Test Changes
+- Adjust one setting at a time
+- Study a session to feel the difference
+- Fine-tune as needed
+
+## Related Topics
+
+- [App Settings](/docs/settings/app-settings/) - Global and all-decks defaults
+- [Study Mode](/docs/study/) - How settings affect study sessions
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - Auto-sync details

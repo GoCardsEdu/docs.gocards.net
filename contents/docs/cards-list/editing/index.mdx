@@ -1,0 +1,354 @@
+---
+title: Editing Cards
+description: Learn how to edit flashcard content, update terms and definitions, and modify existing cards in GoCards.
+keywords: ["edit flashcards","modify cards","update flashcards","change card content","flashcard editing","anki edit cards"]
+---
+
+Editing cards in GoCards is straightforward. You can modify terms, definitions, and formatting anytime without affecting your learning progress.
+
+## How to Edit a Card
+
+### From Cards List
+
+1. **Open "List Cards"** for your deck
+2. **Tap the card** you want to edit
+3. **Select "Edit Card"** from the menu
+4. **Modify term and/or definition**
+5. **Tap the save icon** (💾) when done
+
+### From Study Mode
+
+While studying:
+
+1. **Tap ✏️ Edit icon** in the toolbar
+2. **Modify the current card**
+3. **Tap save icon** (💾)
+4. **Return to study mode** - continues where you left off
+
+### From Browse Mode
+
+Browse Mode is view-only. To edit:
+
+1. **Exit Browse Mode** (back button)
+2. **Open "List Cards"**
+3. **Find and edit the card** as above
+
+---
+
+## The Edit Screen
+
+### Interface
+
+```
+┌─────────────────────────────┐
+│  [←] Edit Card      [💾 🗑️ ⋮]│ ← Toolbar
+├─────────────────────────────┤
+│  Term (Question)            │
+│  ┌───────────────────────┐  │
+│  │ Enter term here...    │  │ ← Term input
+│  └───────────────────────┘  │
+├─────────────────────────────┤
+│  Definition (Answer)        │
+│  ┌───────────────────────┐  │
+│  │ Enter definition...   │  │ ← Definition input
+│  │                       │  │   (larger, scrollable)
+│  │                       │  │
+│  └───────────────────────┘  │
+└─────────────────────────────┘
+```
+
+### Toolbar Actions
+
+**💾 Save** - Saves changes and returns to previous screen
+**🗑️ Delete** - Deletes this card (with confirmation)
+**⋮ More Menu:**
+- Create new card
+- Additional options (future features)
+
+---
+
+## Editing the Term (Front)
+
+The **term** is the question or prompt shown first during study.
+
+### Best Practices
+
+**✅ Good terms:**
+- "What is photosynthesis?"
+- "Capital of France"
+- "Define: Mitosis"
+- "How do you say 'hello' in Spanish?"
+
+**❌ Avoid:**
+- Empty terms
+- Overly long paragraphs (split into multiple cards)
+- Ambiguous questions ("What is it?" - what is "it"?)
+
+### HTML Support
+
+Terms support basic HTML:
+- `<b>Bold text</b>`
+- `<i>Italic text</i>`
+- `<img src="url">` for images
+
+See [Formatting Cards](/docs/cards-list/formatting/) for details.
+
+---
+
+## Editing the Definition (Back)
+
+The **definition** is the answer revealed during study.
+
+### Best Practices
+
+**✅ Good definitions:**
+- Concise and accurate
+- One main concept per card
+- Use bullet points for lists
+- Include examples if helpful
+
+**❌ Avoid:**
+- Overly verbose explanations (use multiple cards instead)
+- Irrelevant information
+- Ambiguous answers
+
+### Rich Content
+
+Definitions support:
+- **HTML formatting** (bold, italic, lists, images)
+- **Multi-line text** (use Enter/Return)
+- **Special characters** (emoji, symbols: ©, ™, °, etc.)
+- **URLs** (clickable links in study mode)
+
+---
+
+## Saving Changes
+
+### Save Methods
+
+1. **Tap 💾 save icon** (top-right) - Most reliable
+2. **Back button** - May prompt to save changes
+3. **Auto-save** - *(Feature may vary by version)*
+
+### What Happens When You Save
+
+- Card content updates immediately
+- **Learning progress preserved** - Review intervals unchanged
+- **Position in deck unchanged** - Ordinal number stays same
+- **Last modified date updated** - Visible for sync tracking
+- **Edge bar may update** - If sync status changes
+
+---
+
+## Does Editing Affect Learning Progress?
+
+**Short answer:** No, editing is safe!
+
+### What's Preserved
+
+✅ **Review interval** - Next review date unchanged
+✅ **Learning history** - Past grading buttons still count
+✅ **Memorization status** - Card still marked as learned/forgotten
+✅ **Study statistics** - Total reviews, success rate, etc.
+
+### What Changes
+
+⚠️ **Last modified timestamp** - Used for file sync
+⚠️ **Sync status** - Edge bar may show "updated" after next sync
+
+### Example
+
+**Before edit:**
+- Card: "What is H2O?" → "Water"
+- Next review: 10 days from now
+- Study history: Marked "Easy" 3 times
+
+**Edit card:**
+- Change to: "What is the chemical formula for water?" → "H2O"
+
+**After edit:**
+- **Next review still:** 10 days from now
+- **Study history:** Still shows 3 "Easy" grades
+- **Behavior:** Spaced repetition continues normally
+
+---
+
+## Common Editing Scenarios
+
+### Fix a Typo
+
+**Problem:** "Whatt is photosynthesis?" (extra 't')
+
+**Solution:**
+1. Tap card → Edit Card
+2. Fix: "What is photosynthesis?"
+3. Save
+4. Done in 5 seconds
+
+---
+
+### Add More Information
+
+**Problem:** Definition is too vague
+
+**Original:**
+- Term: "Mitosis"
+- Definition: "Cell division"
+
+**Improved:**
+- Term: "Mitosis"
+- Definition: "Cell division where one cell divides into two identical daughter cells, each with the same number of chromosomes"
+
+**How:**
+1. Edit card
+2. Expand definition
+3. Save
+
+---
+
+### Clarify Ambiguity
+
+**Problem:** Card is confusing
+
+**Original:**
+- Term: "The capital"
+- Definition: "Paris"
+
+**Improved:**
+- Term: "What is the capital of France?"
+- Definition: "Paris"
+
+**Why:** Clearer question, easier to remember
+
+---
+
+### Split a Complex Card
+
+**Problem:** Card tries to teach too much
+
+**Original:**
+- Term: "Explain photosynthesis"
+- Definition: "Photosynthesis is when plants convert light energy to chemical energy, using chlorophyll in chloroplasts, taking in CO2 and water, producing glucose and oxygen, happening in two stages: light-dependent and light-independent reactions..."
+
+**Better:** Split into 4 cards:
+1. "What is photosynthesis?" → "Process where plants convert light energy to chemical energy"
+2. "What molecule is used in photosynthesis?" → "Chlorophyll"
+3. "What are the inputs of photosynthesis?" → "CO2, water, light"
+4. "What are the outputs of photosynthesis?" → "Glucose, oxygen"
+
+**How:**
+1. Edit original card (simplify)
+2. Add 3 new cards
+3. Each card = one concept
+
+---
+
+### Add an Image
+
+**Problem:** Text alone isn't enough
+
+**How:**
+1. Edit card
+2. Add HTML: `<img src="https://example.com/diagram.png">`
+3. Save
+
+See [Formatting Cards](/docs/cards-list/formatting/) for image details.
+
+---
+
+## Bulk Editing
+
+Need to edit many cards? Two approaches:
+
+### Option 1: Edit in GoCards
+
+**Pros:** Direct, immediate
+**Cons:** Tedious for many cards
+**Best for:** 1-10 cards
+
+**Process:**
+1. Open Cards List
+2. Edit each card one by one
+3. Save after each
+
+### Option 2: Export, Edit in Excel, Re-sync (Premium)
+
+**Pros:** Fast for bulk changes, powerful editing tools
+**Cons:** Requires Premium, extra steps
+**Best for:** 10+ cards
+
+**Process:**
+1. Export deck to Excel/CSV
+2. Edit in Excel (use find-replace, formulas, etc.)
+3. Save Excel file
+4. Sync back to GoCards
+
+See [Sync Cards](/docs/sync-export-import/sync-cards/) for details.
+
+---
+
+## Undo Edits
+
+### Immediate Undo
+
+If you just saved and regret it:
+
+1. **Tap the card again** → Edit Card
+2. **Re-type the original content** (if you remember)
+3. **Save**
+
+Unfortunately, there's no built-in "undo edit" button.
+
+### Restore from Backup
+
+If you have a [database backup](/docs/home/database-backup/):
+
+1. **Export current database** (safety backup)
+2. **Import old database** (from before the edit)
+3. **Find the card** - original content restored
+
+**Warning:** This restores the entire database, losing any other changes made since the backup.
+
+---
+
+## Tips for Effective Editing
+
+### Edit While Studying
+
+When a card confuses you during study:
+- **Pause and edit it immediately**
+- Fix the confusion for next time
+- Your future self will thank you
+
+### Use Consistent Formatting
+
+- **Terms:** Always phrased as questions? Always single words? Be consistent
+- **Definitions:** Same structure across deck (e.g., always start with category)
+
+### Keep It Simple
+
+- **Shorter is better** - Easier to remember
+- **One fact per card** - Don't overload
+- **Clear language** - Avoid jargon unless necessary
+
+### Review Before Exams
+
+- **Edit outdated information** (dates, facts)
+- **Clarify confusing cards** you struggled with
+- **Add related info** that appeared in lectures
+
+### Track Sync Changes
+
+If using [File Sync](/docs/sync-export-import/sync-cards/):
+- Edits in GoCards sync back to Excel
+- Check edge bars to see which cards changed
+- Excel "Last Modified" column shows GoCards edits
+
+---
+
+## Related Topics
+
+- [Formatting Cards](/docs/cards-list/formatting/) - Use HTML for rich content
+- [Deleting Cards](/docs/cards-list/deleting/) - Remove cards you don't need
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - Edit in Excel and sync (Premium)
+- [Study Mode](/docs/study/) - See how edited cards appear during study

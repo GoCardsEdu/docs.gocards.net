@@ -1,0 +1,312 @@
+---
+title: Cards List - Managing Your Flashcards
+description: Learn how to view, search, organize, edit, and manage all flashcards in your deck using the GoCards list view.
+keywords: ["manage flashcards","edit cards","organize flashcards","flashcard list","card management","anki card list","reorder cards","search flashcards"]
+---
+
+<!--
+IMPROVEMENT SUGGESTIONS:
+1. Add screenshot: Cards list showing edge bars with different colors
+2. Add screenshot: Search functionality in action
+3. Add screenshot: Long-press drag-and-drop reordering
+4. Add screenshot: Multi-select mode with checkboxes
+5. Add diagram: Edge bar color legend (red/yellow/green/orange meanings)
+-->
+
+The Cards List screen is your deck management hub. View all cards at once, search, reorder, edit, delete, and perform bulk operations.
+
+## Opening Cards List
+
+From the home screen:
+
+1. **Tap on a deck** to open deck menu
+2. **Select "List Cards"**
+
+You'll see all your cards in a scrollable list/grid view.
+
+---
+
+## The Cards List Interface
+
+### Layout
+
+```
+┌─────────────────────────────┐
+│  [←] Deck Name    [🔍 + ⋮]  │ ← Toolbar
+├─────────────────────────────┤
+│  ┌─────────────────────┐ │  │
+│  │ 1. Card Term        │▌│  │ ← Card with edge bar
+│  │    Definition...    │▌│  │
+│  └─────────────────────┘ │  │
+│  ┌─────────────────────┐ │  │
+│  │ 2. Card Term        │▌│  │
+│  │    Definition...    │▌│  │
+│  └─────────────────────┘ │  │
+│  ┌─────────────────────┐ │  │
+│  │ 3. Card Term        │▌│  │
+│  │    Definition...    │▌│  │
+│  └─────────────────────┘ │  │
+└─────────────────────────────┘
+```
+
+### Toolbar Actions
+
+**🔍 Search** - Filter cards by term or definition text
+**+ Add Card** - Create a new card
+**⋮ More Menu:**
+- Sync with file (Premium)
+- Export to Excel (Premium)
+- Export to CSV (Premium)
+- Deck Settings (⚙️)
+
+---
+
+## Card Display
+
+Each card shows:
+
+### Main Content
+- **Card number** (ordinal position)
+- **Term** (front of card) - bold text
+- **Definition** (back of card) - preview truncated if long
+- **Max lines** - Configurable in [Deck Settings](/docs/settings/deck-settings/)
+
+### Edge Bars (Left or Right)
+
+Colored bars indicate card status:
+
+#### Learning Status
+- **🔴 Red** - Forgotten (recently marked "Again" in study mode)
+- **🟡 Yellow** - Learning in progress
+- **🟢 Green** - Well-memorized (long intervals)
+- **⚪ Gray** - Disabled card (won't appear in study mode)
+
+#### Sync Status (After syncing with file)
+- **🟠 Orange** - Card was updated during last sync
+- **🟢 Green** - Card was added during last sync
+- **Intensity:**
+  - **Brighter** - Changes came from file → app
+  - **Dimmer** - Changes came from app → file
+
+Configure edge bar visibility in [App Settings](/docs/settings/app-settings/).
+
+---
+
+## Searching Cards
+
+### How to Search
+
+1. **Tap the 🔍 search icon** (top-right)
+2. **Type your query** in the search field
+3. **Results filter instantly** as you type
+4. **Tap X** to clear search
+
+### Search Features
+
+- **Searches both** term and definition
+- **Case-insensitive** - "DNA" matches "dna"
+- **Partial matches** - "proto" matches "protocol" and "protein"
+- **Real-time** - Updates as you type
+- **Highlights matches** (if supported)
+
+### Tips for Searching
+
+- **Find duplicates** - Search for common terms
+- **Locate cards to edit** - Search then tap to edit
+- **Review specific topics** - Search for keywords
+- **Verify imports** - Search for terms you know should exist
+
+---
+
+## Quick Card Actions
+
+### Tap a Card
+
+Opens the card's **action menu:**
+
+- **Edit Card** - Modify term/definition (see [Editing Cards](/docs/cards-list/editing/))
+- **Delete Card** - Remove this card
+- **Select Card** - Enter multi-select mode (see [Multi-Select](/docs/cards-list/multi-select/))
+- **Add Card After** - Insert a new card at this position
+
+### Long-Press a Card
+
+Opens the same action menu as tapping.
+
+### Swipe a Card (Left or Right)
+
+**Swipe to delete** - Card disappears with undo option
+
+See [Deleting Cards](/docs/cards-list/deleting/) for details.
+
+---
+
+## Adding New Cards
+
+### Add at End of Deck
+
+1. **Tap "+" button** (top-right)
+2. **Enter term and definition**
+3. **Tap save icon** (💾)
+
+Card appears at the bottom of the list.
+
+### Add After Specific Card
+
+1. **Tap a card** to open menu
+2. **Select "Add Card After"**
+3. **Enter term and definition**
+4. **Save**
+
+New card appears immediately after the selected card.
+
+### Bulk Add
+
+For adding many cards:
+- Use [Excel/CSV Import](/docs/sync-export-import/import-cards/)
+- Edit in spreadsheet software (easier for bulk entry)
+- Import or sync to GoCards
+
+---
+
+## Card Operations
+
+The Cards List supports these operations:
+
+| Operation | How To | Details |
+|-----------|--------|---------|
+| **Edit** | Tap → Edit | [Editing Guide](/docs/cards-list/editing/) |
+| **Delete** | Swipe left/right | [Deleting Guide](/docs/cards-list/deleting/) |
+| **Reorder** | Long-press & drag | [Reordering Guide](/docs/cards-list/reordering/) |
+| **Multi-select** | Tap → Select Card | [Multi-Select Guide](/docs/cards-list/multi-select/) |
+| **Format** | Use HTML in term/definition | [Formatting Guide](/docs/cards-list/formatting/) |
+
+---
+
+## Understanding Card Numbers
+
+Each card has an **ordinal number** (1, 2, 3, ...) showing its position:
+
+### Position Matters
+- **Study mode** shows cards in this order (for new cards)
+- **Browse mode** follows this sequence
+- **Export to Excel/CSV** preserves this order
+
+### Changing Numbers
+- **Reorder cards** - Numbers update automatically
+- **Delete a card** - Subsequent cards renumber
+- **Add a card** - Gets next available number (or inserted position)
+
+### Tips
+- **Group related cards** - Keep similar topics together
+- **Difficulty progression** - Easy → Hard or vice versa
+- **Logical sequence** - Follow a learning path
+
+---
+
+## Edge Bar Details
+
+### Left vs. Right Edge Bar
+
+Configurable in [App Settings](/docs/settings/app-settings/):
+- **Show left edge bar** - Status appears on left side
+- **Show right edge bar** - Status appears on right side
+- **Show both** - Redundant but highly visible
+- **Hide both** - Clean interface, no status indicators
+
+### Status Priority
+
+If a card has multiple statuses, the edge bar shows:
+1. **Sync status** (if recently synced) - Orange/Green
+2. **Forgotten status** (if marked "Again") - Red
+3. **Learning status** (if being studied) - Yellow/Green
+4. **Disabled status** (if disabled) - Gray
+
+### After Syncing
+
+Edge bars help you see what changed:
+
+**Scenario:** You edited 5 cards in Excel and synced.
+
+**In Cards List:**
+- 5 cards have **bright orange edge bars** (updated from file)
+- Other cards unchanged
+
+This visual feedback confirms sync worked correctly.
+
+---
+
+## Tips for Managing Large Decks
+
+### Use Search Extensively
+- Don't scroll through 500 cards
+- Search for what you need
+- Much faster than visual scanning
+
+### Regular Maintenance
+- Delete duplicate cards
+- Fix typos as you find them
+- Keep definitions concise
+
+### Organize Before Import
+- Structure your Excel/CSV file well
+- Cards import in the order they appear
+- Easier to organize in spreadsheet software
+
+### Monitor Edge Bars
+- Forgotten cards (red) need attention
+- Consider editing to make clearer
+- Or study more frequently
+
+### Disable Instead of Delete
+- Card not relevant now but might be later?
+- Disable it (won't show in study mode)
+- Re-enable when needed
+
+*(Note: Disable feature may require specific implementation - check if available)*
+
+---
+
+## Common Workflows
+
+### Review and Edit New Cards
+
+After bulk import:
+
+1. Open **Cards List**
+2. Scroll through cards
+3. Tap any card to edit
+4. Fix formatting, typos, clarity
+5. Repeat until satisfied
+
+### Find and Fix Duplicates
+
+1. **Search for common terms**
+2. If you see duplicates, decide which to keep
+3. **Edit one** to merge information
+4. **Delete the other**
+
+### Reorganize Deck Structure
+
+1. Decide on logical order (alphabetical, difficulty, topic)
+2. **Long-press and drag** cards to reorder (see [Reordering](/docs/cards-list/reordering/))
+3. Save time by organizing in Excel first, then syncing
+
+### Prepare for Exam
+
+1. **Search for relevant topics** (e.g., "Chapter 5")
+2. **Review those cards** in Browse Mode or study them
+3. **Edit** any confusing cards for clarity
+4. **Study mode** to drill the deck
+
+---
+
+## Related Topics
+
+- [Editing Cards](/docs/cards-list/editing/) - Modify card content
+- [Reordering Cards](/docs/cards-list/reordering/) - Drag and drop to change sequence
+- [Deleting Cards](/docs/cards-list/deleting/) - Remove cards with undo
+- [Multi-Select Operations](/docs/cards-list/multi-select/) - Bulk actions
+- [Formatting Cards](/docs/cards-list/formatting/) - Use HTML for rich content
+- [Study Mode](/docs/study/) - Learn your cards
+- [Browse Mode](/docs/browse/) - View cards without studying

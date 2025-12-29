@@ -1,0 +1,305 @@
+---
+title: Reordering Cards
+description: Learn how to rearrange flashcards using drag-and-drop in GoCards to create the perfect study sequence.
+keywords: ["reorder flashcards","rearrange cards","drag drop cards","organize flashcards","card sequence","anki reorder"]
+---
+
+Reorder your flashcards to create the perfect learning sequence. GoCards supports intuitive drag-and-drop reordering in the Cards List.
+
+## How to Reorder Cards
+
+### Drag-and-Drop Method
+
+1. **Open "List Cards"** for your deck
+2. **Long-press a card** (hold for ~1 second)
+3. **Drag the card** up or down
+4. **Release** at the desired position
+5. **Cards renumber automatically**
+
+The card slides into its new position, and all other cards adjust their numbers accordingly.
+
+---
+
+## Why Reorder Cards?
+
+### Logical Progression
+
+**Before exam:** Order by chapter/topic sequence
+- Chapter 1 concepts first
+- Chapter 2 concepts next
+- Follows your textbook or course
+
+### Difficulty Gradient
+
+**For beginners:** Easy → Hard
+- Build confidence with simple cards
+- Gradually increase complexity
+- Momentum helps learning
+
+**For review:** Hard → Easy
+- Tackle difficult material first
+- Get tough cards out of the way
+- End on a positive note
+
+### Related Content Grouping
+
+**Keep similar cards together:**
+- All vocabulary cards in one section
+- All formulas in another section
+- All historical dates grouped
+- Easier to build connections
+
+### Random Order
+
+**Avoid pattern memorization:**
+- Shuffle cards to prevent position-based recall
+- Test true understanding
+- Useful before exams
+
+---
+
+## Reordering Best Practices
+
+### When to Reorder
+
+**✅ Good times:**
+- After importing a new deck (establish structure)
+- Before starting to study (set up sequence)
+- During deck review (reorganize as you learn)
+- Before exams (prioritize important cards)
+
+**❌ Avoid:**
+- During active study sessions (breaks focus)
+- Too frequently (pick a structure and stick with it)
+
+### Efficient Reordering
+
+**For small adjustments (1-5 cards):**
+- Use drag-and-drop in GoCards
+- Quick and intuitive
+
+**For major reorganization (10+ cards):**
+- Export to Excel/CSV (Premium)
+- Reorder rows in Excel (faster)
+- Sync back to GoCards
+
+---
+
+## Card Numbers and Position
+
+### Understanding Ordinal Numbers
+
+Each card has a position number (1, 2, 3, ...):
+
+**Before reordering:**
+```
+1. What is DNA?
+2. What is RNA?
+3. What is ATP?
+```
+
+**Move card 3 to position 1:**
+```
+1. What is ATP?      ← Moved here
+2. What is DNA?      ← Was 1, now 2
+3. What is RNA?      ← Was 2, now 3
+```
+
+**All cards automatically renumber** - no manual updating needed.
+
+### Position Affects Study Order
+
+**New cards** appear in study mode following this order:
+- Card 1 shown first
+- Card 2 shown second
+- Card 3 shown third
+- And so on...
+
+**Review cards** (already studied) appear based on:
+- Due date (spaced repetition algorithm)
+- Position is secondary factor
+
+**Tip:** Reordering mostly affects new cards and browse mode.
+
+---
+
+## Advanced Reordering Techniques
+
+### Move to Top
+
+**Scenario:** Card 47 is very important
+
+**Method:**
+1. Long-press card 47
+2. Drag all the way to top
+3. Release
+4. Now it's card 1
+
+### Move to Bottom
+
+**Scenario:** Card 5 isn't relevant yet
+
+**Method:**
+1. Long-press card 5
+2. Drag all the way to bottom
+3. Release
+4. Now it's the last card
+
+### Insert Between Cards
+
+**Scenario:** Card 10 fits better between 3 and 4
+
+**Method:**
+1. Long-press card 10
+2. Drag to space between cards 3 and 4
+3. Release
+4. Cards renumber: old 10 → new 4, old 4+ all shift down
+
+---
+
+## Reordering Large Decks
+
+### Challenge: Dragging card 200 to position 5
+
+**Problem:** Long drag distance is tedious
+
+**Solutions:**
+
+#### Option 1: Use Search
+
+1. Search for the card
+2. Drag it to new position in filtered view
+3. Clear search - card is now reordered
+
+#### Option 2: Multi-Step Dragging
+
+1. Drag card 200 to card 100 (first move)
+2. Drag card 100 to card 50 (second move)
+3. Drag card 50 to card 5 (final move)
+
+#### Option 3: Excel Reordering (Premium)
+
+1. Export deck to Excel
+2. Cut row 200
+3. Insert at row 5
+4. Save and sync
+5. Much faster for major changes
+
+---
+
+## Reordering and File Sync
+
+### How Sync Handles Reordering
+
+**If you reorder in GoCards:**
+- Next sync updates Excel file row order
+- Cards move to match GoCards sequence
+
+**If you reorder in Excel:**
+- Next sync updates GoCards card order
+- Cards move to match Excel sequence
+
+**Conflict resolution:**
+- Newest change wins (based on timestamps)
+- GoCards compares last modified dates
+
+See [Sync Cards](/docs/sync-export-import/sync-cards/) for details.
+
+---
+
+## Tips for Organizing Your Deck
+
+### Create Sections
+
+**Example: Language Deck**
+```
+Cards 1-50:   Greetings & Basic Phrases
+Cards 51-100: Food & Restaurants
+Cards 101-150: Travel & Directions
+Cards 151-200: Work & Business
+```
+
+**How:**
+- Reorder cards to group by theme
+- Consider adding "header cards" with just section names
+
+### Alphabetical Order
+
+**For reference decks:**
+- Order terms alphabetically
+- Easy to find specific cards
+- Good for dictionaries, glossaries
+
+**How:**
+1. Export to Excel
+2. Sort by "Term" column
+3. Sync back
+
+### By Difficulty
+
+**Rate your cards:**
+- Green cards (easy) → Beginning
+- Yellow cards (medium) → Middle
+- Red cards (hard) → End
+
+**Benefit:** Focus energy where needed
+
+### By Exam Weight
+
+**Before finals:**
+- High-value topics first
+- Less important topics last
+- Prioritize study time effectively
+
+---
+
+## Reordering vs. Other Organization Methods
+
+| Goal | Best Method |
+|------|-------------|
+| Change study sequence | Reorder cards |
+| Group by topic | Reorder OR use folders/separate decks |
+| Remove cards | Delete instead |
+| Temporarily skip cards | Disable card (if available) |
+| Major reorganization | Export to Excel, reorder, sync |
+
+---
+
+## Limitations
+
+### Can't Reorder Across Decks
+
+Each deck has its own sequence. To move cards between decks:
+
+1. Use [Multi-Select](/docs/cards-list/multi-select/) to cut cards
+2. Open destination deck
+3. Paste cards
+
+### Reordering Doesn't Affect Review Schedule
+
+**Doesn't change:**
+- Next review date
+- Learning intervals
+- Spaced repetition algorithm
+
+**Only changes:**
+- Card display order
+- New card presentation sequence
+
+### No "Shuffle" Button
+
+To randomize cards:
+- Export to Excel
+- Use Excel's RAND() function to randomize
+- Sync back
+
+Or manually drag cards to different positions.
+
+---
+
+## Related Topics
+
+- [Cards List](/docs/cards-list/) - Overview of card management
+- [Multi-Select Operations](/docs/cards-list/multi-select/) - Move multiple cards at once
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - Reorder in Excel and sync
+- [Study Mode](/docs/study/) - See how card order affects study

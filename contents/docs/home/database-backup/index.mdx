@@ -1,0 +1,206 @@
+---
+title: Database Backup & Restore
+description: Learn how to export and import your GoCards database to back up all your decks, cards, and learning progress.
+keywords: ["backup flashcards","export database","import database","flashcard backup","restore flashcards","anki backup","save learning progress"]
+---
+
+GoCards lets you export and import your entire database, preserving all decks, cards, folders, and learning progress. This is the most comprehensive backup method available.
+
+## Why Back Up Your Database?
+
+- **Complete backup** - All decks, all progress, everything
+- **Switch devices** - Transfer your data to a new phone
+- **Before major changes** - Safety net before reorganizing
+- **Long-term archive** - Keep snapshots of your learning history
+- **No premium required** - Database export/import is free for all users
+
+---
+
+## Exporting Your Database
+
+### Export Everything (All Decks)
+
+From the home screen:
+
+1. **Go to "All Decks" or "Recent Decks" tab**
+2. **Tap "⋮" menu** (top-right)
+3. **Select "Import Database"** (shows both import and export options)
+4. **Choose "Export Database"**
+5. **Select save location** (Downloads, Google Drive, etc.)
+6. **File is saved** as `GoCards-backup-YYYY-MM-DD.db`
+
+### Export a Single Deck
+
+From any deck menu:
+
+1. **Tap on a deck** to open menu
+2. **Select "More" (⋮)**
+3. **Choose "Export Database"**
+4. **Select save location**
+5. **File is saved** as `DeckName-YYYY-MM-DD.db`
+
+The exported `.db` file contains:
+- All cards in the deck/database
+- Card term and definition content
+- Learning progress (review intervals, memorization status)
+- Study statistics
+- Deck settings
+
+---
+
+## Importing a Database
+
+### Before You Import
+
+**⚠️ Warning:** Importing a database will:
+- Add all decks/cards from the file
+- If a deck with the same name exists, it may be **replaced or merged**
+- Consider exporting your current database first as a backup
+
+### Import Process
+
+1. **Go to home screen** (Recent Decks or All Decks tab)
+2. **Tap "⋮" menu** (top-right)
+3. **Select "Import Database"**
+4. **Browse to your .db file**
+5. **Select the file**
+6. **GoCards imports the data** (may take a few moments for large files)
+7. **Your decks appear** in the All Decks list
+
+### What Gets Imported
+
+When you import a `.db` file:
+- ✅ All decks and folders
+- ✅ All cards with terms and definitions
+- ✅ Learning progress and study history
+- ✅ Card ordinal (card order)
+- ✅ Deck settings
+- ✅ Disabled card status
+- ✅ HTML formatting in cards
+
+---
+
+## Best Practices
+
+### Regular Backups
+
+- **Weekly exports** if you study daily
+- **After major edits** like importing or bulk changes
+- **Before app updates** (just in case)
+- **Before device changes** or factory resets
+
+### Storage Locations
+
+**Good places to save backups:**
+- **Google Drive** - Automatic cloud backup
+- **Dropbox** - Sync across devices
+- **Local Downloads** - Then manually copy to computer
+- **Email to yourself** - Quick and easy for small databases
+
+**Avoid:**
+- Temporary folders (may be auto-deleted)
+- App cache directories
+
+### File Naming
+
+The app uses this format: `GoCards-backup-2025-12-29.db`
+
+Consider adding details for multiple backups:
+- `GoCards-backup-before-finals-2025-12-29.db`
+- `Spanish-Deck-semester1-2025-12-29.db`
+
+### Database File Size
+
+Database files grow with:
+- Number of cards
+- HTML content (especially images)
+- Study history length
+
+Expect:
+- Small deck (100 cards) = ~50 KB
+- Medium deck (1000 cards) = ~500 KB
+- Large deck (10,000 cards) = ~5 MB
+
+---
+
+## Transferring to a New Device
+
+Moving to a new phone? Here's how:
+
+### Method 1: Cloud Storage (Recommended)
+
+1. **Old device:** Export database to Google Drive/Dropbox
+2. **New device:** Install GoCards
+3. **New device:** Import database from cloud storage
+4. ✅ Done! All decks and progress transferred
+
+### Method 2: Direct Transfer
+
+1. **Old device:** Export database
+2. **Transfer file** via USB, Bluetooth, or email
+3. **New device:** Save file locally
+4. **New device:** Import database
+
+---
+
+## Troubleshooting
+
+### Import Failed
+
+**Possible causes:**
+- File is corrupted
+- File is not a valid GoCards database
+- Insufficient storage space
+- File is from a newer version of GoCards
+
+**Solutions:**
+- Verify the file extension is `.db`
+- Try re-exporting from the source
+- Update GoCards to latest version
+- Check available device storage
+
+### Database Too Large
+
+**If import times out or fails:**
+- Split your content into smaller decks first
+- Remove unused decks before exporting
+- Export individual decks instead of entire database
+
+### Lost Progress After Import
+
+**If study progress is missing:**
+- Make sure you imported the correct file
+- Check if the import completed successfully
+- The file may have been exported before your recent study sessions
+
+---
+
+## Database vs. Individual Deck Export
+
+| Feature | Database Export (.db) | Deck Export (Excel/CSV) |
+|---------|----------------------|-------------------------|
+| **All cards** | ✅ Yes | ✅ Yes |
+| **Learning progress** | ✅ Yes | ❌ No |
+| **Study history** | ✅ Yes | ❌ No |
+| **All decks at once** | ✅ Yes | ❌ One deck only |
+| **Premium required** | ❌ Free | ✅ Premium |
+| **Editable on computer** | ❌ No | ✅ Yes (Excel/CSV) |
+| **Sync capability** | ❌ No | ✅ Yes (Premium) |
+
+**Use database export for:**
+- Complete backups
+- Device transfers
+- Long-term archives
+
+**Use Excel/CSV export for:**
+- Editing cards on computer
+- Sharing deck content only
+- Syncing with file (Premium)
+
+---
+
+## Related
+
+- [Import Cards from Excel/CSV](/docs/sync-export-import/import-cards/)
+- [Export Cards to Excel/CSV](/docs/sync-export-import/export-cards/)
+- [Sync Cards with Files](/docs/sync-export-import/sync-cards/)

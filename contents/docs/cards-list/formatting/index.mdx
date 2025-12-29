@@ -1,0 +1,447 @@
+---
+title: Formatting Cards with HTML
+description: Learn how to use HTML tags to format flashcards with bold text, italics, images, links, and lists in GoCards.
+keywords: ["format flashcards","HTML flashcards","bold text cards","images in flashcards","anki formatting","rich text flashcards","flashcard styling"]
+---
+
+GoCards supports basic HTML formatting in both terms and definitions, letting you create rich, visually appealing flashcards with bold text, images, lists, and more.
+
+## Supported HTML Tags
+
+GoCards renders HTML using a WebView, supporting common formatting tags:
+
+### Text Formatting
+
+| HTML | Result | Example |
+|------|--------|---------|
+| `<b>text</b>` | **Bold** | `<b>Important</b>` |
+| `<strong>text</strong>` | **Bold** (semantic) | `<strong>Key concept</strong>` |
+| `<i>text</i>` | *Italic* | `<i>Emphasis</i>` |
+| `<em>text</em>` | *Italic* (semantic) | `<em>Foreign word</em>` |
+| `<u>text</u>` | Underline | `<u>Underlined</u>` |
+| `<br>` | Line break | `Line 1<br>Line 2` |
+
+### Lists
+
+**Unordered lists (bullets):**
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+**Ordered lists (numbers):**
+```html
+<ol>
+  <li>First step</li>
+  <li>Second step</li>
+  <li>Third step</li>
+</ol>
+```
+
+### Images
+
+**Basic image:**
+```html
+<img src="https://example.com/image.png">
+```
+
+**Image with size:**
+```html
+<img src="https://example.com/image.png" width="300">
+```
+
+**Image with alt text:**
+```html
+<img src="https://example.com/diagram.png" alt="Cell structure diagram">
+```
+
+### Links
+
+**Clickable links:**
+```html
+<a href="https://example.com">Click here</a>
+```
+
+Links are clickable in study/browse mode.
+
+### Headings
+
+```html
+<h1>Main Heading</h1>
+<h2>Subheading</h2>
+<h3>Smaller Heading</h3>
+```
+
+### Other Tags
+
+- `<p>Paragraph</p>` - Paragraph blocks
+- `<div>Container</div>` - Generic container
+- `<span>Inline text</span>` - Inline element
+- `<code>Code snippet</code>` - Monospace code
+- `<pre>Preformatted text</pre>` - Preserves spacing
+
+---
+
+## How to Add HTML Formatting
+
+### During Card Creation
+
+1. **Tap "+" to add card**
+2. **In term or definition field**, type HTML:
+   ```
+   What is <b>photosynthesis</b>?
+   ```
+3. **Save card**
+4. **HTML renders** in study mode
+
+### During Card Editing
+
+1. **Edit an existing card**
+2. **Add HTML tags** to term or definition
+3. **Save**
+4. **Preview in study mode** to verify rendering
+
+### In Excel/CSV (for sync)
+
+**When editing in Excel:**
+- **Term column:** `What is <b>mitosis</b>?`
+- **Definition column:** `Cell division into <i>two identical</i> cells`
+- **Sync to GoCards** - HTML renders automatically
+
+---
+
+## Common Use Cases
+
+### Emphasize Key Terms
+
+**Original:**
+```
+Term: What is photosynthesis?
+Definition: Process where plants convert light to energy
+```
+
+**With HTML:**
+```
+Term: What is <b>photosynthesis</b>?
+Definition: Process where plants convert <b>light energy</b> to <b>chemical energy</b>
+```
+
+**Effect:** Important words stand out, easier to scan.
+
+---
+
+### Add Images to Definitions
+
+**Use case:** Diagram, photo, or illustration helps learning
+
+**Example:**
+```
+Term: What does a plant cell look like?
+Definition: <img src="https://example.com/plant-cell.png" width="300"><br>
+Contains chloroplasts, cell wall, and large vacuole.
+```
+
+**Result:** Image displays with text explanation.
+
+**Tips:**
+- Use `width="300"` to control size (pixels)
+- Host images online (Google Drive, Imgur, etc.) for URLs
+- Smaller images load faster
+
+---
+
+### Create Lists
+
+**Use case:** Multiple points or steps
+
+**Example:**
+```
+Term: What are the steps of mitosis?
+Definition:
+<ol>
+  <li>Prophase - Chromosomes condense</li>
+  <li>Metaphase - Chromosomes align at center</li>
+  <li>Anaphase - Sister chromatids separate</li>
+  <li>Telophase - Nuclear envelopes reform</li>
+</ol>
+```
+
+**Result:** Numbered list in study mode.
+
+---
+
+### Format Mathematical Expressions
+
+**Use case:** Equations, formulas, symbols
+
+**Example:**
+```
+Term: What is the Pythagorean theorem?
+Definition: a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
+```
+
+**Tags:**
+- `<sup>2</sup>` - Superscript (exponents)
+- `<sub>2</sub>` - Subscript (chemical formulas)
+
+**Result:** Proper mathematical notation.
+
+---
+
+### Add External Links
+
+**Use case:** Reference materials, further reading
+
+**Example:**
+```
+Term: Who is Albert Einstein?
+Definition: Physicist who developed relativity theory.
+<br><a href="https://wikipedia.org/wiki/Albert_Einstein">Learn more</a>
+```
+
+**Result:** Tappable link opens in browser (from study mode).
+
+---
+
+### Bilingual Cards with Italics
+
+**Use case:** Language learning
+
+**Example:**
+```
+Term: How do you say "hello" in Spanish?
+Definition: <i>Hola</i>
+```
+
+**Result:** Foreign word styled differently (italics).
+
+---
+
+## Best Practices
+
+### Keep It Simple
+
+**✅ Good:**
+```html
+<b>Key term</b> with explanation
+```
+
+**❌ Overdone:**
+```html
+<div style="color:red;font-size:24px;background:yellow;border:5px solid blue;">
+  <b><i><u>EXCESSIVE FORMATTING</u></i></b>
+</div>
+```
+
+**Why:** Simple HTML is more readable and consistent across devices.
+
+---
+
+### Test in Study Mode
+
+**Always preview:**
+1. Add HTML to card
+2. Save
+3. **Open study mode**
+4. Verify rendering looks good
+5. Adjust if needed
+
+Different HTML may render differently on various Android versions.
+
+---
+
+### Use Semantic Tags
+
+**Prefer semantic tags:**
+- `<strong>` over `<b>` (screen readers understand "strong" better)
+- `<em>` over `<i>` (semantic emphasis)
+
+**Why:** Better accessibility and future-proofing.
+
+---
+
+### Consistent Image Sizes
+
+**Set widths consistently:**
+```html
+<img src="..." width="300">
+<img src="..." width="300">
+<img src="..." width="300">
+```
+
+**Why:** Uniform appearance across cards.
+
+---
+
+### Host Images Reliably
+
+**Good hosting options:**
+- ✅ Google Drive (public link)
+- ✅ Imgur
+- ✅ Your own website
+- ⚠️ Dropbox (ensure public sharing)
+
+**Avoid:**
+- ❌ Local file paths (won't work on device)
+- ❌ Temporary hosting (links expire)
+
+---
+
+## Troubleshooting
+
+### HTML Shows as Plain Text
+
+**Problem:** You see `<b>text</b>` instead of **text**
+
+**Causes:**
+- HTML not properly formatted
+- Missing closing tags
+- Special characters not escaped
+
+**Solution:**
+1. Check for typos in tags
+2. Ensure every `<tag>` has `</tag>`
+3. Test with simple HTML first (`<b>test</b>`)
+
+---
+
+### Images Don't Display
+
+**Problem:** Image placeholder or broken icon
+
+**Causes:**
+- URL is incorrect or private
+- Image host is down
+- No internet connection
+- Image file too large
+
+**Solutions:**
+1. **Verify URL** - Open in browser to test
+2. **Check permissions** - Ensure image is public
+3. **Try smaller image** - Compress if large
+4. **Use reliable host** - Switch to Google Drive/Imgur
+
+---
+
+### Formatting Looks Weird
+
+**Problem:** Layout is broken or text overlaps
+
+**Causes:**
+- Complex nested HTML
+- CSS conflicts
+- Android version differences
+
+**Solutions:**
+1. **Simplify HTML** - Remove unnecessary tags
+2. **Test on device** - Different from computer preview
+3. **Avoid custom CSS** - Stick to basic HTML
+
+---
+
+### Line Breaks Not Working
+
+**Problem:** Text runs together
+
+**Solution:**
+Use `<br>` for line breaks:
+```html
+Line 1<br>
+Line 2<br>
+Line 3
+```
+
+Or use paragraph tags:
+```html
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+```
+
+---
+
+## Advanced Techniques
+
+### Tables (if supported)
+
+**Simple table:**
+```html
+<table border="1">
+  <tr>
+    <td>Cell 1</td>
+    <td>Cell 2</td>
+  </tr>
+  <tr>
+    <td>Cell 3</td>
+    <td>Cell 4</td>
+  </tr>
+</table>
+```
+
+**Note:** Table support may vary. Test first.
+
+---
+
+### Special Characters
+
+**HTML entities:**
+- `&copy;` → ©
+- `&trade;` → ™
+- `&deg;` → °
+- `&nbsp;` → Non-breaking space
+- `&lt;` → <
+- `&gt;` → >
+- `&amp;` → &
+
+**Use when:** You need these symbols in your cards.
+
+---
+
+### Inline Styling (use sparingly)
+
+**Example:**
+```html
+<span style="color:red;">Important</span>
+```
+
+**Caution:** Inline styles may not work consistently across devices.
+
+---
+
+## Formatting and File Sync
+
+### HTML in Excel/CSV
+
+**Excel cell content:**
+```
+What is <b>DNA</b>?
+```
+
+**When synced:**
+- GoCards imports HTML as-is
+- Renders in study mode
+- Appears as plain HTML in Excel (editable)
+
+**Tip:** Edit complex HTML in Excel (easier than mobile keyboard).
+
+---
+
+### Syncing Preserves Formatting
+
+**Round-trip preservation:**
+1. Add HTML in GoCards
+2. Sync to Excel
+3. Edit in Excel (add more HTML)
+4. Sync back to GoCards
+5. **All HTML preserved**
+
+---
+
+## Related Topics
+
+- [Editing Cards](/docs/cards-list/editing/) - Modify card content
+- [Sync Cards](/docs/sync-export-import/sync-cards/) - Edit HTML in Excel
+- [Study Mode](/docs/study/) - See formatted cards during study
+- [Cards List](/docs/cards-list/) - Manage all your cards
