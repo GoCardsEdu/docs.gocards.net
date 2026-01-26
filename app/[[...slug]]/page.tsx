@@ -8,6 +8,7 @@ import { Typography } from "@/components/ui/typography"
 import { ArticleBreadcrumb } from "@/components/article/breadcrumb"
 import { Pagination } from "@/components/article/pagination"
 import { TableOfContents } from "@/components/toc"
+import { FacebookComments } from "@/components/facebook-comments"
 
 interface PageProps {
   params: Promise<{ slug: string[] }>
@@ -15,6 +16,17 @@ interface PageProps {
 
 export default async function Pages({ params }: PageProps) {
   const { slug = [] } = await params
+
+  // Redirect root path to first page (client-side for static export)
+  if (slug.length === 0) {
+    return (
+      <>
+        <meta httpEquiv="refresh" content="0;url=/sync-export-import/sync-cards" />
+        <script dangerouslySetInnerHTML={{ __html: 'window.location.href="/sync-export-import/sync-cards"' }} />
+      </>
+    )
+  }
+
   const pathName = slug.join("/")
   const res = await getDocument(pathName)
 
@@ -34,6 +46,8 @@ export default async function Pages({ params }: PageProps) {
         <Typography>
           <section>{content}</section>
           <Pagination pathname={pathName} />
+          <Separator className="mt-8" />
+          <FacebookComments url={`${Settings.metadataBase}/${pathName}`} />
         </Typography>
       </section>
       <TableOfContents
@@ -47,6 +61,14 @@ export default async function Pages({ params }: PageProps) {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug = [] } = await params
+
+  if (slug.length === 0) {
+    return {
+      title: Settings.title,
+      description: Settings.description,
+    }
+  }
+
   const pathName = slug.join("/")
   const res = await getDocument(pathName)
 
@@ -64,7 +86,7 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: `${frontmatter.title} - ${Settings.openGraph.title}`,
       description: frontmatter.description || Settings.openGraph.description,
-      url: `${Settings.metadataBase}/docs/${pathName}`,
+      url: `${Settings.metadataBase}/${pathName}`,
       siteName: Settings.openGraph.siteName,
       type: "article",
       images: Settings.openGraph.images.map((image) => ({
@@ -83,13 +105,16 @@ export async function generateMetadata({ params }: PageProps) {
       })),
     },
     alternates: {
-      canonical: `${Settings.metadataBase}/docs/${pathName}`,
+      canonical: `${Settings.metadataBase}/${pathName}`,
     },
   }
 }
 
 export function generateStaticParams() {
-  return PageRoutes.filter((item) => item.href).map((item) => ({
-    slug: item.href.split("/").slice(1),
-  }))
+  return [
+    { slug: [] }, // Root path for redirect
+    ...PageRoutes.filter((item) => item.href).map((item) => ({
+      slug: item.href.split("/").slice(1),
+    })),
+  ]
 }
