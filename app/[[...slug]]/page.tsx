@@ -21,8 +21,8 @@ export default async function Pages({ params }: PageProps) {
   if (slug.length === 0) {
     return (
       <>
-        <meta httpEquiv="refresh" content="0;url=/sync-export-import/sync-cards" />
-        <script dangerouslySetInnerHTML={{ __html: 'window.location.href="/sync-export-import/sync-cards"' }} />
+        <meta httpEquiv="refresh" content="0;url=/overview" />
+        <script dangerouslySetInnerHTML={{ __html: 'window.location.href="/overview"' }} />
       </>
     )
   }
