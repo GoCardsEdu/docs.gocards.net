@@ -1,3 +1,6 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import { Link } from 'lib/transition'
 import { Fragment } from 'react'
 import { LuHouse } from 'react-icons/lu'
@@ -11,10 +14,14 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 
-import { PageRoutes } from '@/lib/pageroutes'
+import { getLanguageFromPath } from '@/lib/i18n'
+import { getPageRoutesByLanguage } from '@/lib/pageroutes.language'
 import { toTitleCase } from '@/utils/toTitleCase'
 
 export function ArticleBreadcrumb({ paths }: { paths: string[] }) {
+  const pathname = usePathname()
+  const lang = getLanguageFromPath(pathname)
+  const pageRoutes = getPageRoutesByLanguage(lang)
   return (
     <div className="pb-5">
       <Breadcrumb>
@@ -24,7 +31,7 @@ export function ArticleBreadcrumb({ paths }: { paths: string[] }) {
               <Link
                 title="Documentation Home"
                 aria-label="Documentation Home"
-                href={`/docs${PageRoutes[0].href}`}
+                href={`/${lang}${pageRoutes[0].href}`}
               >
                 <LuHouse className="h-4" />
               </Link>
@@ -39,7 +46,7 @@ export function ArticleBreadcrumb({ paths }: { paths: string[] }) {
                   <Link
                     title={toTitleCase(paths[0])}
                     aria-label={toTitleCase(paths[0])}
-                    href={`/docs/${paths[0]}`}
+                    href={`/${lang}/${paths[0]}`}
                   >
                     {toTitleCase(paths[0])}
                   </Link>
@@ -53,7 +60,7 @@ export function ArticleBreadcrumb({ paths }: { paths: string[] }) {
 
               {paths.slice(-1).map((path, i) => {
                 const index = paths.length - 1 + i
-                const href = `/docs/${paths.slice(0, index + 1).join('/')}`
+                const href = `/${lang}/${paths.slice(0, index + 1).join('/')}`
 
                 return (
                   <Fragment key={path}>
@@ -79,7 +86,7 @@ export function ArticleBreadcrumb({ paths }: { paths: string[] }) {
             </>
           ) : (
             paths.map((path, index) => {
-              const href = `/docs/${paths.slice(0, index + 1).join('/')}`
+              const href = `/en/${paths.slice(0, index + 1).join('/')}`
 
               return (
                 <Fragment key={path}>

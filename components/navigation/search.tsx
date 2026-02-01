@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { useEffect, useMemo, useState } from 'react'
 import { LuFileText, LuSearch } from 'react-icons/lu'
 import Anchor from '@/components/anchor'
@@ -13,8 +14,9 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { getLanguageFromPath } from '@/lib/i18n'
+import { getRoutesByLanguage } from '@/lib/pageroutes.language'
 import { advanceSearch, cn, debounce, highlight, search } from '@/lib/utils'
-import { Documents } from '@/settings/documents'
 
 interface Document {
   title?: string
@@ -25,6 +27,10 @@ interface Document {
 }
 
 export default function Search() {
+  const pathname = usePathname()
+  const lang = getLanguageFromPath(pathname)
+  const documents = getRoutesByLanguage(lang)
+
   const [searchedInput, setSearchedInput] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const [filteredResults, setFilteredResults] = useState<search[]>([])
@@ -46,7 +52,7 @@ export default function Search() {
       if (isOpen && event.key === 'Enter' && filteredResults.length > 2) {
         const selected = filteredResults[0]
         if ('href' in selected) {
-          window.location.href = `/docs${selected.href}`
+          window.location.href = `/${lang}${selected.href}`
           setIsOpen(false)
         }
       }
@@ -68,7 +74,7 @@ export default function Search() {
     debouncedSearch(searchedInput)
   }, [searchedInput, debouncedSearch])
 
-  function renderDocuments(documents: Document[], parentHref = '/docs'): React.ReactNode[] {
+  function renderDocuments(documents: Document[], parentHref = `/${lang}`): React.ReactNode[] {
     if (!Array.isArray(documents) || documents.length === 0) {
       return []
     }
@@ -157,7 +163,7 @@ export default function Search() {
                             className={cn(
                               'flex w-full max-w-77.5 flex-col gap-0.5 rounded-sm p-3 text-[15px] transition-all duration-300 hover:bg-neutral-100 sm:max-w-120 dark:hover:bg-neutral-900'
                             )}
-                            href={`/docs${item.href}`}
+                            href={`/${lang}${item.href}`}
                           >
                             <div className="flex h-full items-center gap-x-2">
                               <LuFileText className="h-[1.1rem] w-[1.1rem]" />
@@ -177,7 +183,7 @@ export default function Search() {
                     }
                     return null
                   })
-                : renderDocuments(Documents)}
+                : renderDocuments(documents)}
             </div>
           </ScrollArea>
         </DialogContent>

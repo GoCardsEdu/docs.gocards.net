@@ -21,4 +21,10 @@ if [ -f "dist/scripts/lib/pageroutes.mjs" ]; then
   rm -f dist/scripts/lib/pageroutes.mjs.bak
 fi
 
+if [ -f "dist/scripts/settings/documents.mjs" ]; then
+  echo "Processing documents.mjs..."
+  sed -i.bak "s|from '\./\([^']*\)'|from './\1.mjs'|g" dist/scripts/settings/documents.mjs
+  rm -f dist/scripts/settings/documents.mjs.bak
+fi
+
 node dist/scripts/scripts/content.mjs || exit 1

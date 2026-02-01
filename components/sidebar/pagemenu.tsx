@@ -3,15 +3,20 @@
 import { usePathname } from 'next/navigation'
 import SubLink from '@/components/sidebar/sublink'
 import { Separator } from '@/components/ui/separator'
-import { Routes } from '@/lib/pageroutes'
+import { getLanguageFromPath, SUPPORTED_LANGUAGES } from '@/lib/i18n'
+import { getRoutesByLanguage } from '@/lib/pageroutes.language'
 
 export function PageMenu({ isSheet = false }) {
   const pathname = usePathname()
-  if (!pathname.startsWith('/docs')) return null
+  const lang = getLanguageFromPath(pathname)
+
+  if (!SUPPORTED_LANGUAGES.some(l => pathname.startsWith(`/${l}`))) return null
+
+  const routes = getRoutesByLanguage(lang)
 
   return (
     <div className="flex flex-col gap-3.5 pb-6">
-      {Routes.map((item, index) => {
+      {routes.map((item, index) => {
         if ('spacer' in item) {
           return <Separator key={`spacer-${index}`} className="my-2" />
         }
@@ -21,7 +26,7 @@ export function PageMenu({ isSheet = false }) {
             <SubLink
               {...{
                 ...item,
-                href: `/docs${item.href}`,
+                href: `/${lang}${item.href}`,
                 level: 0,
                 isSheet,
               }}

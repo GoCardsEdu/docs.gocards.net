@@ -1,5 +1,9 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { LuArrowUpRight } from 'react-icons/lu'
+import { getLanguageFromPath } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { GitHubLink } from '@/settings/navigation'
 
@@ -9,8 +13,11 @@ interface SideBarEdit {
 }
 
 export default function RightSideBar({ slug, title }: SideBarEdit) {
+  const pathname = usePathname()
+  const lang = getLanguageFromPath(pathname)
+
   const feedbackUrl = `${GitHubLink.href}/issues/new?title=Feedback for "${title}"&labels=feedback`
-  const editUrl = `${GitHubLink.href}/edit/main/contents/docs/${slug}/index.mdx`
+  const editUrl = `${GitHubLink.href}/edit/main/contents/${lang}/${slug}/index.mdx`
 
   return (
     <div className="flex flex-col gap-3 pl-2">

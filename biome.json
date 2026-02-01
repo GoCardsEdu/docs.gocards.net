@@ -35,7 +35,7 @@
       "!./dist",
       "!**/dist",
       "!public/search-data",
-      "!contents/docs"
+      "!contents/en"
     ]
   },
   "linter": {

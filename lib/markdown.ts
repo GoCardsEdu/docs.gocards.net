@@ -11,6 +11,7 @@ import remarkGfm from 'remark-gfm'
 import { Node } from 'unist'
 import { visit } from 'unist-util-visit'
 import { components } from '@/lib/components'
+import { type Language } from '@/lib/i18n'
 import { PageRoutes } from '@/lib/pageroutes'
 import { GitHubLink } from '@/settings/navigation'
 import { Settings } from '@/types/settings'
@@ -49,25 +50,26 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
   })
 }
 
-const documentPath = (slug: string) => {
+const documentPath = (slug: string, lang: Language = 'en') => {
   return Settings.gitload
-    ? `${GitHubLink.href}/raw/main/contents/docs/${slug}/index.mdx`
-    : path.join(process.cwd(), '/contents/docs/', `${slug}/index.mdx`)
+    ? `${GitHubLink.href}/raw/main/contents/${lang}/${slug}/index.mdx`
+    : path.join(process.cwd(), `/contents/${lang}/`, `${slug}/index.mdx`)
 }
 
 const getDocumentPath = (() => {
   const cache = new Map<string, string>()
-  return (slug: string) => {
-    if (!cache.has(slug)) {
-      cache.set(slug, documentPath(slug))
+  return (slug: string, lang: Language = 'en') => {
+    const cacheKey = `${lang}:${slug}`
+    if (!cache.has(cacheKey)) {
+      cache.set(cacheKey, documentPath(slug, lang))
     }
-    return cache.get(slug)!
+    return cache.get(cacheKey)!
   }
 })()
 
-export async function getDocument(slug: string) {
+export async function getDocument(slug: string, lang: Language = 'en') {
   try {
-    const contentPath = getDocumentPath(slug)
+    const contentPath = getDocumentPath(slug, lang)
     let rawMdx = ''
     let lastUpdated: string | null = null
 
@@ -85,7 +87,7 @@ export async function getDocument(slug: string) {
     }
 
     const parsedMdx = await parseMdx<BaseMdxFrontmatter>(rawMdx)
-    const tocs = await getTable(slug)
+    const tocs = await getTable(slug, lang)
 
     return {
       frontmatter: parsedMdx.frontmatter,
@@ -102,7 +104,8 @@ export async function getDocument(slug: string) {
 const headingsRegex = /^(#{2,4})\s(.+)$/gm
 
 export async function getTable(
-  slug: string
+  slug: string,
+  lang: Language = 'en'
 ): Promise<{ level: number; text: string; href: string }[]> {
   const extractedHeadings: {
     level: number
@@ -112,7 +115,7 @@ export async function getTable(
   let rawMdx = ''
 
   if (Settings.gitload) {
-    const contentPath = `${GitHubLink.href}/raw/main/contents/docs/${slug}/index.mdx`
+    const contentPath = `${GitHubLink.href}/raw/main/contents/${lang}/${slug}/index.mdx`
     try {
       const response = await fetch(contentPath)
       if (!response.ok) {
@@ -124,7 +127,7 @@ export async function getTable(
       return []
     }
   } else {
-    const contentPath = path.join(process.cwd(), '/contents/docs/', `${slug}/index.mdx`)
+    const contentPath = path.join(process.cwd(), `/contents/${lang}/`, `${slug}/index.mdx`)
     try {
       const stream = createReadStream(contentPath, { encoding: 'utf-8' })
       for await (const chunk of stream) {

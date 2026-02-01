@@ -1,11 +1,11 @@
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { ArticleBreadcrumb } from '@/components/article/breadcrumb'
 import { Pagination } from '@/components/article/pagination'
 import { TableOfContents } from '@/components/toc'
 import { Separator } from '@/components/ui/separator'
 import { Typography } from '@/components/ui/typography'
 import { getDocument } from '@/lib/markdown'
-import { PageRoutes } from '@/lib/pageroutes'
+import { getPageRoutesByLanguage } from '@/lib/pageroutes.language'
 import { Settings } from '@/types/settings'
 
 interface PageProps {
@@ -14,8 +14,18 @@ interface PageProps {
 
 export default async function Pages({ params }: PageProps) {
   const { slug = [] } = await params
+
+  // Redirect root path to first page
+  if (slug.length === 0) {
+    const routes = getPageRoutesByLanguage('pl')
+    const firstPage = routes.find((route) => route.href)
+    if (firstPage) {
+      redirect(`/pl${firstPage.href}`)
+    }
+  }
+
   const pathName = slug.join('/')
-  const res = await getDocument(pathName)
+  const res = await getDocument(pathName, 'pl')
 
   if (!res) notFound()
 
@@ -42,8 +52,12 @@ export default async function Pages({ params }: PageProps) {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug = [] } = await params
+
+  // Return null for root path (will redirect)
+  if (slug.length === 0) return null
+
   const pathName = slug.join('/')
-  const res = await getDocument(pathName)
+  const res = await getDocument(pathName, 'pl')
 
   if (!res) return null
 
@@ -59,7 +73,7 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: `${frontmatter.title} - ${Settings.openGraph.title}`,
       description: frontmatter.description || Settings.openGraph.description,
-      url: `${Settings.metadataBase}/docs/${pathName}`,
+      url: `${Settings.metadataBase}/en/${pathName}`,
       siteName: Settings.openGraph.siteName,
       type: 'article',
       images: Settings.openGraph.images.map((image) => ({
@@ -78,13 +92,18 @@ export async function generateMetadata({ params }: PageProps) {
       })),
     },
     alternates: {
-      canonical: `${Settings.metadataBase}/docs/${pathName}`,
+      canonical: `${Settings.metadataBase}/pl/${pathName}`,
     },
   }
 }
 
 export function generateStaticParams() {
-  return PageRoutes.filter((item) => item.href).map((item) => ({
-    slug: item.href.split('/').slice(1),
-  }))
+  const pages = getPageRoutesByLanguage('pl')
+    .filter((item) => item.href)
+    .map((item) => ({
+      slug: item.href.split('/').slice(1),
+    }))
+
+  // Include root path for redirect
+  return [{ slug: [] }, ...pages]
 }

@@ -4,6 +4,7 @@ import Anchor from '@/components/anchor'
 import { Logo } from '@/components/navigation/logo'
 import Search from '@/components/navigation/search'
 import { SheetLeft } from '@/components/sidebar'
+import { LanguageToggle } from '@/components/language-toggle'
 import { ModeToggle } from '@/components/theme-toggle'
 import { buttonVariants } from '@/components/ui/button'
 import { SheetClose } from '@/components/ui/sheet'
@@ -39,6 +40,7 @@ export function Navbar() {
               <LuGithub className="h-[1.1rem] w-[1.1rem]" />
             </Link>
           )}
+          {/* <LanguageToggle /> */}
           <ModeToggle />
         </div>
       </div>
