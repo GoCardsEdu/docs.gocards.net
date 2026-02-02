@@ -1,0 +1,11 @@
+.typography {
+  @apply dark:prose-headings:text-white;
+}
+
+.dark .typography :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: white !important;
+}
+
+.dark .typography :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: white !important;
+}
