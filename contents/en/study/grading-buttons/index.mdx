@@ -1,0 +1,115 @@
+---
+title: Grading Buttons
+description: Master your flashcards with GoCards' study mode featuring spaced repetition algorithm, four grading buttons, interactive gestures, and progress tracking.
+keywords: ["spaced repetition","flashcard study","anki study mode","learn flashcards","memorization technique","study cards","flashcard learning","spaced repetition algorithm"]
+---
+
+## The Four Grading Buttons
+
+After revealing the answer, grade how well you remembered:
+
+### 🔴 Again (Red)
+
+**Use when:** You forgot the card completely
+
+**What happens:**
+- Card stays in the current study session
+- Reappears after you've studied/forgotten 5 more cards
+- Next review: **2 days** (or current interval if already learned)
+- Marks card as "forgotten" (visible in card list edge bar)
+
+**Customization:** Change the "forgotten card limit" in [Deck Settings](/en/settings/all-decks#limit-forgotten-cards)
+
+---
+
+### 🟠 Quick Repetition (Orange)
+
+**Use when:** Cramming for an exam or need short-term recall
+
+**What happens:**
+- First review: **5 minutes**
+- Second review: **10 minutes**
+- Third review: **20 minutes**
+- Intervals keep doubling
+
+**Perfect for:**
+- Last-minute studying before exams
+- Memorizing information needed in the next few hours
+- Intensive drilling of difficult material
+
+---
+
+### 🔵 Hard (Blue)
+
+**Use when:** You remembered, but it took effort
+
+**What happens:**
+
+If this is your **first time** grading the card:
+- Next review: **3 days**
+- Subsequent reviews: **interval × 1.5**
+
+If you previously clicked **"Again"**:
+- Updates the failed attempt with **interval × 0.5**
+- Creates new review with **interval × 1.5**
+
+**Example progression:**
+1. First: 3 days
+2. Second: 4.5 days (3 × 1.5)
+3. Third: 6.75 days (4.5 × 1.5)
+
+---
+
+### 🟢 Easy (Green)
+
+**Use when:** You remembered quickly and confidently
+
+**What happens:**
+
+If this is your **first time** grading the card:
+- Next review: **5 days**
+- Subsequent reviews: **interval × 2**
+
+If you previously clicked **"Again"**:
+- Updates the failed attempt with **interval × 0.5**
+- Marks card as memorized
+
+**Example progression:**
+1. First: 5 days
+2. Second: 10 days (5 × 2)
+3. Third: 20 days (10 × 2)
+4. Fourth: 40 days (20 × 2)
+
+---
+
+## Understanding Review Intervals
+
+The interval shown below each button is **when you'll see this card again**.
+
+### How Intervals Work
+
+**New cards** (never studied):
+- Again: 2 days
+- Quick: 5 minutes
+- Hard: 3 days
+- Easy: 5 days
+
+**Previously studied cards:**
+- Intervals adapt based on your history
+- More "Easy" clicks = longer intervals
+- "Again" clicks = shorter intervals
+- The algorithm balances memory retention with study efficiency
+
+### Why These Intervals?
+
+GoCards uses **spaced repetition** based on memory research:
+- Review just before you're about to forget
+- Longer intervals strengthen long-term memory
+- Too frequent = waste of time
+- Too infrequent = you'll forget
+
+## Related Topics
+
+- [Browse Mode](/en/browse-cards) - View cards without studying
+- [Cards List](/en/cards-list) - See all cards and their status
+- [Deck Settings](/en/settings/all-decks) - Customize study behavior
