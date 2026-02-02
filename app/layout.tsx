@@ -1,4 +1,4 @@
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Footer } from '@/components/navigation/footer'
@@ -54,6 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId="G-GEHTHKJ4E6" />
       {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
       <body className={`${inter.variable} font-regular`}>
         <Providers>
