@@ -1,0 +1,34 @@
+---
+title: File Format Specifications
+description: Detailed specifications for creating Excel (.xlsx) and CSV (.csv) files compatible with GoCards.
+keywords: ["file format","excel format","csv format","file structure","import format"]
+---
+
+## Required File Structure
+
+You can also simply export the deck to see an example of the file format.
+
+| Column | Required | Data Type | Description |
+|--------|----------|-----------|-------------|
+| **Term** | ✅ Required | Text | Question/prompt (front of card) |
+| **Definition** | ✅ Required | Text | Answer (back of card) |
+| **Disabled** | ❌ Optional | Boolean | TRUE/FALSE - card enabled status |
+
+**Important:**
+- Order doesn't matter.
+
+## CSV Format (.csv)
+
+```csv
+Term,Definition,Disabled
+"What is DNA?","Deoxyribonucleic acid",FALSE
+"Capital of France?","Paris",FALSE
+```
+
+---
+
+## Related Topics
+
+- [Sync Cards](/en/sync-export-import/sync-cards) - Use your formatted files with bi-directional sync
+- [Import Cards](/en/sync-export-import/import-cards) - Create decks from properly formatted files
+- [Export Cards](/en/sync-export-import/export-cards) - See examples by exporting existing decks

@@ -1,0 +1,52 @@
+---
+title: Formatting Cards with HTML
+description: GoCards supports basic HTML formatting in both terms and definitions, letting you create rich, visually appealing flashcards with bold text, images, lists, and more.
+keywords: ["format flashcards","HTML flashcards","bold text cards","images in flashcards","anki formatting","rich text flashcards","flashcard styling"]
+---
+
+## Supported HTML Tags
+
+| HTML Example | Description |
+|--------------|-------------|
+| **Text Formatting** |
+| `<b>Important</b>` | **Bold** text |
+| `<strong>Key concept</strong>` | **Bold** text (semantic) |
+| `<i>Emphasis</i>` | *Italic* text |
+| `<em>Foreign word</em>` | *Italic* text (semantic) |
+| `<u>Underlined</u>` | Underline text |
+| `Line 1<br />Line 2` | Line break |
+| **Headings** |
+| `<h1>Chapter 1</h1>` | Main heading (largest) |
+| `<h2>Section 1.1</h2>` | Subheading |
+| `<h3>Subsection</h3>` | Smaller heading |
+| **Lists** |
+| `<ul><li>Apple</li><li>Banana</li></ul>` | Unordered list (bullets) |
+| `<ol><li>First</li><li>Second</li></ol>` | Ordered list (numbers) |
+| **Images** |
+| `<img src="https://example.com/photo.png" />` | Display image from URL |
+| `<img src="https://example.com/photo.png" width="300" />` | Image with custom width (in pixels) |
+| **Links** |
+| `<a href="https://example.com">Click here</a>` | Clickable link with custom text |
+| `https://example.com` | Plain URL (automatically converted to clickable link) |
+
+---
+
+## Automatic Link Conversion
+
+**You don't need to use HTML tags for links!** GoCards automatically converts plain URLs into clickable links.
+
+Simply type or paste a URL directly into your card:
+```
+https://example.com
+www.example.com
+```
+
+Both will become clickable links in study and browse modes. Use the `<a>` tag only when you want custom link text like "Click here" instead of showing the full URL.
+
+---
+
+## Related Topics
+
+- [Code Syntax Highlighting](/en/edit-card/code-tag) - Display programming code with colors
+- [Edit Card](/en/edit-card) - Basic card editing features
+- [Sync with Excel/CSV](/en/sync-export-import/sync-cards) - Edit HTML in spreadsheets

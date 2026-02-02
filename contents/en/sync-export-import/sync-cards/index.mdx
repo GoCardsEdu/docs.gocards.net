@@ -1,0 +1,105 @@
+---
+title: Sync Cards with Excel/CSV Files
+description: Keep your flashcard decks synchronized with Excel or CSV files stored in cloud storage. Edit your cards on a laptop, save to Google Drive or Dropbox, and changes automatically sync to your phone—all while preserving your study progress.
+keywords: ["flashcards synchronization","anki flashcards synchronization","cards synchronization","anki cards synchronization","study cards synchronization","anki study cards synchronization","sync flashcards","sync flashcards excel","sync flashcards csv","sync cards","sync cards excel","sync cards csv","sync study cards","sync study cards excel","sync study cards csv","anki sync","anki sync excel","anki sync csv","anki sync flashcards","anki sync flashcards excel","anki sync flashcards csv","anki sync cards","anki sync cards excel","anki sync cards csv","anki sync study cards","anki sync study cards excel","anki sync study cards csv"]
+---
+
+## Why Sync Instead of Import?
+
+**The Problem with Traditional Apps:**
+
+Most flashcard apps only support importing files. Every time you update your flashcards, you have to delete the old deck and import a new one, losing all your study progress in the process.
+
+**The GoCards Solution:**
+
+Sync your deck once, then edit the file anytime. Changes flow automatically in both directions while your learning statistics, due dates, and mastery levels stay intact.
+
+---
+
+## How Sync Works
+
+GoCards uses smart synchronization that compares modification dates to determine which source has the newest changes.
+
+### Intelligent Card Matching
+
+When syncing, GoCards automatically detects whether a card has been modified or is entirely new:
+
+- 🟠 **Modified cards** - Updated if there's at least 70% similarity in the term or definition (prevents accidental overwrites)
+- 🟢 **New cards** - Added automatically if similarity is below 70%
+- 🔴 **Deleted cards** - Removed if they no longer exist in the source
+
+This smart matching ensures your edits are preserved while preventing duplicate cards.
+
+### What Gets Synced
+
+**When the file is newer than the deck:**
+- 🟢 New cards from the file are added
+- 🔴 Deleted cards are removed
+- 🟠 Modified cards are updated
+- Card order matches the file
+- Study progress is preserved
+
+**When the card is newer than the file:**
+- 🟠 Changes from the card are written back to the file
+- Custom columns in your spreadsheet are preserved and move with their cards
+
+---
+
+## See It in Action
+
+Watch how sync works in practice:
+
+<center><iframe width="395" height="700" src="https://www.youtube.com/embed/rthjtSAq13A?si=ipRAJYeRNYG1ermM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></center>
+
+**What happens in this demo:**
+1. A deck is exported to create a synced file
+2. Changes are made to both the file (3 cards) and the app (3 cards)
+3. Sync is triggered
+4. The card list shows what changed with color indicators
+5. Study progress remains intact despite the updates
+
+---
+
+## Visual Sync Indicators
+
+After syncing, colored edge bars in your card list show exactly which cards changed.
+
+Learn more in [Edge Bars](/en/cards-list/edge-bars).
+
+---
+
+## Key Benefits
+
+✅ **Preserve Study Progress** - Never lose your learning statistics again
+
+✅ **Bi-directional Sync** - Changes flow both ways automatically
+
+✅ **Edit Anywhere** - Update cards on laptop or phone
+
+✅ **Cloud Storage Integration** - Works with Google Drive, Dropbox, and more
+
+✅ **Smart Conflict Resolution** - Prevents accidental data loss with similarity checking
+
+✅ **Extra Data Preserved** - Keep custom columns in your spreadsheet intact
+
+---
+
+## Supported File Formats
+
+**Excel (.xlsx, .xls)**
+- Compatible with Microsoft Excel, Google Sheets, LibreOffice Calc
+
+**CSV (.csv)**
+- Universal compatibility with any text editor or spreadsheet program
+
+See the [File Format Guide](/en/sync-export-import/file-format/) for detailed specifications.
+
+---
+
+## Related Topics
+
+- [Export Cards](/en/sync-export-import/export-cards) - Create a new Excel/CSV file from a deck
+- [Import Cards](/en/sync-export-import/import-cards) - Create a deck from an existing file
+- [File Format](/en/sync-export-import/file-format) - Understand the required file structure
+- [Why Use Excel/CSV](/en/sync-export-import/why-use-excel-csv) - Benefits of computer editing
+- [Auto-Sync](/en/study/auto-sync) - Enable automatic syncing during study sessions
