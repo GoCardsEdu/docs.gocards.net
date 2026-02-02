@@ -1,7 +1,6 @@
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Footer } from '@/components/navigation/footer'
 import { Navbar } from '@/components/navigation/navbar'
 import { Providers } from '@/providers'
 import { Settings } from '@/types/settings'
@@ -60,7 +59,6 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           <main className="h-auto px-5 sm:px-8">{children}</main>
-          <Footer />
         </Providers>
       </body>
     </html>
