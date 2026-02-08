@@ -857,6 +857,30 @@
     }
   },
   {
+    "slug": "/paid-posts",
+    "title": "Write for Us - Paid Posts",
+    "description": "I am looking to order paid posts about GoCards — an Android flashcard app with Excel/CSV sync. You write an article on your blog, I pay for it.",
+    "content": "### What I Am Looking For\n\n* Blog posts or articles on your website\n* Honest reviews or tutorials featuring GoCards\n* Comparison articles (e.g. Anki vs GoCards, Quizlet alternatives)\n* \"Best flashcard apps\" or \"best study apps\" lists\n\n***\n\n### Requirements\n\n* Your website should be related to:\n  * **Languages** — English learning, Spanish, French, German, Japanese, Korean, Chinese, or any language learning\n  * **Medicine & science** — medical students, nursing, anatomy, pharmacology, biology, chemistry\n  * **Law & business** — law school, bar exam, accounting, certifications\n  * **Education** — studying, study tips, exam preparation, tutoring, homeschooling\n  * **Android apps** — app reviews, Android app lists, best Android apps, mobile apps\n  * **Edtech** — edtech, educational technology, e-learning\n  * **Productivity** — productivity tools, study habits, self-improvement\n  * Or any other sector where flashcards are useful\n\n* The post should include at least one dofollow link to:\n  * Any article on [docs.gocards.net](https://docs.gocards.net)\n  * [GoCards on Google Play](https://play.google.com/store/apps/details?id=pl.gocards)\n  * Any video on [GoCards YouTube](https://www.youtube.com/@gocardsnet)\n\n***\n\n### Contact\n\nIf you have a blog or website and offer sponsored content, please send me:\n\n* Link to your blog or website\n* Pricing\n* Conditions\n\n**gocards \\[dot] edu \\[at] gmail \\[dot] com**\n",
+    "_searchMeta": {
+      "cleanContent": "what i am looking for blog posts or articles on your website honest reviews or tutorials featuring gocards comparison articles e g anki vs gocards quizlet alternatives best flashcard apps or best study apps lists requirements your website should be related to: languages english learning spanish french german japanese korean chinese or any language learning medicine science medical students nursing anatomy pharmacology biology chemistry law business law school bar exam accounting certifications education studying study tips exam preparation tutoring homeschooling android apps app reviews android app lists best android apps mobile apps edtech edtech educational technology e-learning productivity productivity tools study habits self-improvement or any other sector where flashcards are useful the post should include at least one dofollow link to: any article on docs gocards net gocards on google play any video on gocards youtube contact if you have a blog or website and offer sponsored content please send me: link to your blog or website pricing conditions gocards dot edu at gmail dot com",
+      "headings": [],
+      "keywords": [
+        "write for us",
+        "paid post",
+        "sponsored post",
+        "guest post",
+        "Languages",
+        "Medicine & science",
+        "Law & business",
+        "Education",
+        "Android apps",
+        "Edtech",
+        "Productivity",
+        "gocards \\[dot] edu \\[at] gmail \\[dot] com"
+      ]
+    }
+  },
+  {
     "slug": "/settings/all-decks",
     "title": "Default Deck Settings",
     "description": "Configure default settings that apply to all decks unless overridden by deck-specific custom settings.",

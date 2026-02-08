@@ -156,5 +156,9 @@ export const Documents: Paths[] = [
                 href: "/app"
             }
         ]
+    },
+    {
+        title: "Write for Us",
+        href: "/paid-posts"
     }
 ]

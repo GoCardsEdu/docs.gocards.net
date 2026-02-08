@@ -154,5 +154,9 @@ export const Documents = [
                 href: "/app"
             }
         ]
+    },
+    {
+        title: "Write for Us",
+        href: "/paid-posts"
     }
 ];
